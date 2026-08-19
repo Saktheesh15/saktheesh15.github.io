@@ -6,8 +6,8 @@
     <title>Saktheesh | Data Engineer & Cloud Data Architect</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Saktheesh - Microsoft Certified Azure Databricks Data Engineer Associate specializing in PySpark, Airflow, SQL, AWS/Azure Data Lakes, and Cloud ETL Pipelines.">
-    <meta name="keywords" content="Saktheesh, Data Engineer, Azure Databricks, PySpark, Airflow, AWS Glue, Athena, SQL, Data Pipelines, ETL, Data Migration, Chennai">
+    <meta name="description" content="Saktheesh - Microsoft Certified Azure Databricks Data Engineer Associate specializing in PySpark, Databricks Unity Catalog, Airflow, SQL, AWS/Azure Data Lakes, and Cloud ETL Pipelines.">
+    <meta name="keywords" content="Saktheesh, Data Engineer, Azure Databricks, PySpark, Airflow, AWS Glue, Athena, SQL, Data Pipelines, ETL, Data Migration, YOLOv8, Chennai">
     <meta name="author" content="Saktheesh">
     <link rel="canonical" href="https://saktheesh15.github.io/">
 
@@ -83,7 +83,10 @@
             <a href="#cli" class="mobile-link"><i class="fas fa-code"></i> Data CLI</a>
             <a href="#contact" class="mobile-link"><i class="fas fa-paper-plane"></i> Contact</a>
             <div class="mobile-actions">
-                <a href="assets/Saktheesh_Data_Engineer_Resume.pdf" target="_blank" class="btn btn-primary btn-block">
+                <a href="https://topmate.io/saktheesh/" target="_blank" class="btn btn-primary btn-block mb-2">
+                    <i class="fas fa-calendar-check"></i> Book 1-on-1 on Topmate
+                </a>
+                <a href="assets/Saktheesh_Data_Engineer_Resume.pdf" target="_blank" class="btn btn-secondary btn-block">
                     <i class="fas fa-download"></i> Download Data Resume
                 </a>
             </div>
@@ -98,7 +101,7 @@
                 <div class="hero-content">
                     <div class="badge-pill">
                         <i class="fab fa-microsoft text-cyan glow-icon"></i>
-                        <span>Microsoft Certified Azure Databricks Data Engineer</span>
+                        <span>Microsoft Certified Azure Databricks Data Engineer Associate</span>
                     </div>
 
                     <h1 class="hero-title">
@@ -113,12 +116,13 @@
 
                     <p class="hero-description">
                         Microsoft Certified Azure Databricks Data Engineer Associate specializing in <strong>ETL / ELT Pipelines</strong>, 
-                        cloud data migration (On-Prem to AWS/Azure), real-time streaming architectures with <strong>Azure Databricks & Spark</strong>, 
-                        <strong>Apache Airflow</strong> orchestration, and <strong>SQL</strong> query optimization.
+                        <strong>Databricks Unity Catalog & Delta Lake (Medallion Architecture)</strong>, cloud migration (On-Prem to AWS/Azure), 
+                        real-time streaming with <strong>Spark & Airflow</strong>, and <strong>SQL query optimization</strong>.
                     </p>
 
                     <div class="hero-badges">
                         <div class="tech-badge"><i class="fab fa-microsoft"></i> Azure Databricks</div>
+                        <div class="tech-badge"><i class="fas fa-layer-group"></i> Medallion (Bronze/Silver/Gold)</div>
                         <div class="tech-badge"><i class="fas fa-bolt"></i> PySpark & Delta Lake</div>
                         <div class="tech-badge"><i class="fas fa-database"></i> Advanced SQL</div>
                         <div class="tech-badge"><i class="fas fa-wind"></i> Apache Airflow</div>
@@ -130,10 +134,10 @@
                             <i class="fas fa-project-diagram"></i> Explore Data Pipelines
                         </a>
                         <button id="hero-resume-btn" class="btn btn-secondary glass-button">
-                            <i class="fas fa-file-alt"></i> View Data Resume
+                            <i class="fas fa-file-alt"></i> View Resume
                         </button>
-                        <a href="#cli" class="btn btn-terminal glass-button">
-                            <i class="fas fa-terminal"></i> Launch Data CLI
+                        <a href="https://topmate.io/saktheesh/" target="_blank" class="btn btn-topmate glass-button">
+                            <i class="fas fa-comments"></i> Book Topmate Session
                         </a>
                     </div>
                 </div>
@@ -157,23 +161,27 @@
                         <div class="profile-pipeline-status">
                             <div class="pipeline-node">
                                 <span class="node-dot active"></span>
-                                <span class="node-label">Raw Data</span>
+                                <span class="node-label">Bronze (Raw)</span>
                             </div>
                             <div class="pipeline-connector"></div>
                             <div class="pipeline-node">
                                 <span class="node-dot active"></span>
-                                <span class="node-label">Databricks / Delta</span>
+                                <span class="node-label">Silver (Cleaned)</span>
                             </div>
                             <div class="pipeline-connector"></div>
                             <div class="pipeline-node">
                                 <span class="node-dot active"></span>
-                                <span class="node-label">Gold Layer</span>
+                                <span class="node-label">Gold (Star Schema)</span>
                             </div>
                         </div>
+
+                        <!-- Hero Social Links Grid -->
                         <div class="profile-socials">
-                            <a href="https://github.com/Saktheesh15" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/saktheesh-a-" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="mailto:saktheeshanbzhagan@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="https://github.com/Saktheesh15" target="_blank" title="GitHub Profile" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/saktheesh-a-/" target="_blank" title="LinkedIn Profile" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://leetcode.com/u/Saktheesh_A/" target="_blank" title="LeetCode Profile" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+                            <a href="https://topmate.io/saktheesh/" target="_blank" title="Topmate 1-on-1" aria-label="Topmate"><i class="fas fa-user-astronaut"></i></a>
+                            <a href="mailto:saktheeshanbzhagan@gmail.com" title="Direct Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
@@ -193,15 +201,15 @@
                 <div class="metric-card">
                     <div class="metric-icon"><i class="fas fa-project-diagram"></i></div>
                     <div class="metric-info">
-                        <h3><span class="counter" data-target="7">0</span>+</h3>
-                        <p>Data & Cloud Projects</p>
+                        <h3><span class="counter" data-target="8">0</span>+</h3>
+                        <p>Data, AI & Web Projects</p>
                     </div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="metric-icon"><i class="fas fa-briefcase"></i></div>
                     <div class="metric-info">
-                        <h3><span class="counter" data-target="2">0</span></h3>
-                        <p>Freelance Cloud Projects</p>
+                        <h3><span class="counter" data-target="4">0</span></h3>
+                        <p>Industry Internships</p>
                     </div>
                 </div>
                 <div class="metric-card">
@@ -225,38 +233,37 @@
 
                 <div class="about-grid">
                     <div class="about-text-card glass-card">
-                        <h3>Certified Data Engineer & Cloud Pipeline Architect</h3>
+                        <h3>Certified Data Engineer & Cloud Pipeline Specialist</h3>
                         <p>
                             I am a <strong>Microsoft Certified Azure Databricks Data Engineer Associate</strong> and 
-                            <strong>Computer Science & Engineering graduate</strong> with a singular focus on <strong>Data Engineering</strong>.
+                            <strong>2025 Computer Science & Engineering graduate</strong> who owns data problems end-to-end and dives deep into root causes.
                         </p>
                         <p>
-                            I specialize in constructing robust ETL/ELT pipelines, migrating legacy on-premises database environments 
-                            into cloud data lakes (AWS & Azure), orchestrating complex task flows with <strong>Apache Airflow</strong>, 
-                            and executing batch and streaming analytics using <strong>PySpark and Azure Databricks</strong>.
+                            I specialize in constructing robust <strong>ETL/ELT pipelines</strong>, implementing <strong>Medallion Architectures (Bronze/Silver/Gold)</strong> 
+                            with Databricks Unity Catalog and Delta Lake (supporting ACID transactions, time travel, and incremental loads), 
+                            migrating legacy on-premises databases to cloud data lakes (AWS S3 & Azure Blob), and orchestrating task flows with <strong>Apache Airflow</strong>.
                         </p>
                         <p>
-                            In addition to my personal repositories, I actively engineer production data solutions through 
-                            <strong>freelance client engagements</strong> (including cloud migration and restaurant sales analytics pipelines) 
-                            and cutting-edge <strong>live streaming projects</strong> (Uber Real-Time Telemetry and Zomato AI Analytics).
+                            Complementing my core Data Engineering expertise, I bring hands-on full-stack development experience in <strong>Python, Django, React.js, PostgreSQL, and AWS (EC2, RDS)</strong>, 
+                            enabling me to bridge complex data infrastructure with production-ready APIs and analytical dashboards.
                         </p>
 
                         <div class="about-highlights">
                             <div class="highlight-item">
                                 <i class="fas fa-check-circle text-cyan"></i>
-                                <span>Microsoft Certified Azure Databricks Data Engineer</span>
+                                <span>Microsoft Certified Azure Databricks Data Engineer Associate</span>
                             </div>
                             <div class="highlight-item">
                                 <i class="fas fa-check-circle text-cyan"></i>
-                                <span>On-Premises Database to Cloud Data Migration</span>
+                                <span>Databricks Unity Catalog, Delta Lake & Medallion Architecture</span>
                             </div>
                             <div class="highlight-item">
                                 <i class="fas fa-check-circle text-cyan"></i>
-                                <span>Real-Time Streaming & Medallion Architecture (Bronze/Silver/Gold)</span>
+                                <span>Star Schema Modeling (Fact & Dimension Tables) & Query Tuning</span>
                             </div>
                             <div class="highlight-item">
                                 <i class="fas fa-check-circle text-cyan"></i>
-                                <span>Freelance Data Pipeline Engineering for Enterprise Clients</span>
+                                <span>Cloud Migration & Real-Time Event Streaming Pipelines</span>
                             </div>
                         </div>
                     </div>
@@ -264,23 +271,23 @@
                     <div class="about-pillars">
                         <div class="pillar-card glass-card">
                             <div class="pillar-icon"><i class="fab fa-microsoft"></i></div>
-                            <h4>Azure Databricks & Delta Lake</h4>
-                            <p>Building high-throughput Spark pipelines, ACID Delta Lake tables, and Medallion architecture analytical layers.</p>
+                            <h4>Databricks & Unity Catalog</h4>
+                            <p>Building high-throughput PySpark pipelines, ACID Delta Lake tables, Workflows, Genie Spaces, and Unity Catalog access control.</p>
                         </div>
                         <div class="pillar-card glass-card">
                             <div class="pillar-icon"><i class="fas fa-cloud-upload-alt"></i></div>
                             <h4>Cloud Data Migration</h4>
-                            <p>Migrating on-prem RDBMS schemas, flat files, and transactional databases to scalable AWS & Azure Cloud Lakes.</p>
+                            <p>Migrating legacy on-premise RDBMS schemas, flat files, and transactional databases to scalable AWS & Azure Cloud Lakes.</p>
                         </div>
                         <div class="pillar-card glass-card">
                             <div class="pillar-icon"><i class="fas fa-network-wired"></i></div>
-                            <h4>Streaming & AI Pipelines</h4>
-                            <p>Engineering real-time event ingestion (Uber telemetry) and AI-augmented data analytics pipelines (Zomato analytics).</p>
+                            <h4>Streaming & AI Applications</h4>
+                            <p>Engineering real-time event ingestion (Uber telemetry), AI computer vision pipelines (YOLOv8), and AI analytics (Zomato).</p>
                         </div>
                         <div class="pillar-card glass-card">
-                            <div class="pillar-icon"><i class="fas fa-clock"></i></div>
-                            <h4>Airflow & Batch Scheduling</h4>
-                            <p>Defining automated DAG workflows, task dependencies, SLA alerts, and Linux cron server automation.</p>
+                            <div class="pillar-icon"><i class="fas fa-code-branch"></i></div>
+                            <h4>Full-Stack & DevOps</h4>
+                            <p>REST API development (Django, Flask, React), PostgreSQL schema design, CI/CD pipelines via GitHub Actions & AWS EC2/RDS.</p>
                         </div>
                     </div>
                 </div>
@@ -311,7 +318,7 @@
                                 <span><i class="fas fa-calendar-check"></i> Earned: July 2026</span>
                             </div>
                             <p class="cert-desc">
-                                Validates expert proficiency in data engineering using Azure Databricks, Delta Lake architecture, PySpark batch & streaming transformations, and enterprise cloud data security.
+                                Validates expert proficiency in data engineering using Azure Databricks, Delta Lake architecture, PySpark batch & streaming transformations, Unity Catalog, and enterprise cloud data security.
                             </p>
                         </div>
                     </div>
@@ -329,7 +336,7 @@
                                 <span><i class="fas fa-calendar-check"></i> Issued: October 2025</span>
                             </div>
                             <p class="cert-desc">
-                                Recognized by Oracle for knowledge in Oracle Cloud Infrastructure (OCI), AI workloads, machine learning concepts, and cloud architecture fundamentals.
+                                Recognized by Oracle for knowledge in Oracle Cloud Infrastructure (OCI), Machine Learning, GenAI, LLMs, prompt engineering, and cloud AI services.
                             </p>
                         </div>
                     </div>
@@ -396,7 +403,7 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-subtitle">&gt; TECH MATRIX</span>
-                    <h2 class="section-title">Data Engineering Tech Stack</h2>
+                    <h2 class="section-title">Technical Skills Matrix</h2>
                     <div class="title-underline"></div>
                 </div>
 
@@ -404,15 +411,15 @@
                 <div class="skill-controls">
                     <div class="skill-search-box">
                         <i class="fas fa-search"></i>
-                        <input type="text" id="skill-search" placeholder="Search skills (e.g. Databricks, PySpark, Airflow, SQL)...">
+                        <input type="text" id="skill-search" placeholder="Search skills (e.g. Databricks, PySpark, Airflow, SQL, React)...">
                     </div>
                     <div class="skill-tabs" id="skill-tabs">
                         <button class="skill-tab active" data-category="all">All Tech</button>
-                        <button class="skill-tab" data-category="pipeline">Pipelines & Streaming</button>
-                        <button class="skill-tab" data-category="database">Databases & Delta Lake</button>
-                        <button class="skill-tab" data-category="cloud">Cloud (Azure/AWS/GCP)</button>
-                        <button class="skill-tab" data-category="programming">Languages & Linux</button>
-                        <button class="skill-tab" data-category="analytics">Analytics & AI</button>
+                        <button class="skill-tab" data-category="pipeline">Databricks & Big Data</button>
+                        <button class="skill-tab" data-category="database">Databases & Warehouses</button>
+                        <button class="skill-tab" data-category="cloud">Cloud & DevOps</button>
+                        <button class="skill-tab" data-category="programming">Programming & Web</button>
+                        <button class="skill-tab" data-category="analytics">AI, ML & Analytics</button>
                     </div>
                 </div>
 
@@ -421,71 +428,61 @@
                     <div class="skill-card glass-card" data-category="pipeline">
                         <div class="skill-card-header">
                             <i class="fab fa-microsoft skill-icon text-cyan"></i>
-                            <span class="skill-level">Certified</span>
+                            <span class="skill-level">Microsoft Certified</span>
                         </div>
-                        <h3>Azure Databricks & PySpark</h3>
-                        <p>Medallion architecture (Bronze/Silver/Gold), Delta Lake ACID tables, Spark Structured Streaming, PySpark DataFrames.</p>
-                        <div class="skill-tags"><span>Databricks</span><span>Delta Lake</span><span>PySpark</span></div>
+                        <h3>Databricks & PySpark</h3>
+                        <p>Unity Catalog, Delta Lake (ACID, time travel), Workflows, Genie Spaces, Medallion Architecture (Bronze/Silver/Gold), PySpark DataFrames.</p>
+                        <div class="skill-tags"><span>Databricks</span><span>Delta Lake</span><span>PySpark</span><span>Unity Catalog</span></div>
                     </div>
 
                     <div class="skill-card glass-card" data-category="pipeline">
                         <div class="skill-card-header">
                             <i class="fas fa-wind skill-icon text-cyan"></i>
-                            <span class="skill-level">Core Tool</span>
+                            <span class="skill-level">Data Pipelines</span>
                         </div>
-                        <h3>Apache Airflow</h3>
-                        <p>DAG creation, workflow scheduling, task dependencies, operator configuration, and automated error retries.</p>
-                        <div class="skill-tags"><span>DAGs</span><span>Scheduling</span><span>Operators</span></div>
-                    </div>
-
-                    <div class="skill-card glass-card" data-category="pipeline">
-                        <div class="skill-card-header">
-                            <i class="fas fa-cloud-upload-alt skill-icon text-emerald"></i>
-                            <span class="skill-level">Production</span>
-                        </div>
-                        <h3>Cloud Data Migration</h3>
-                        <p>Migrating on-premises SQL databases & files into AWS S3 / Azure Blob cloud lakes with zero data loss.</p>
-                        <div class="skill-tags"><span>Migration</span><span>ETL</span><span>On-Prem to Cloud</span></div>
+                        <h3>ETL/ELT & Apache Airflow</h3>
+                        <p>Historical & incremental loading strategies, star schema data modeling, data validation, Airflow DAGs, and task scheduling.</p>
+                        <div class="skill-tags"><span>ETL/ELT</span><span>Airflow DAGs</span><span>Star Schema</span><span>SCD</span></div>
                     </div>
 
                     <div class="skill-card glass-card" data-category="database">
                         <div class="skill-card-header">
                             <i class="fas fa-database skill-icon text-blue"></i>
-                            <span class="skill-level">Advanced</span>
+                            <span class="skill-level">Advanced SQL</span>
                         </div>
                         <h3>SQL & Query Optimization</h3>
-                        <p>Expertise in CTEs, complex JOINs, window functions (ROW_NUMBER, RANK, LEAD/LAG), subqueries, and indexing.</p>
+                        <p>Complex joins, CTEs, window functions (ROW_NUMBER, RANK, LEAD/LAG), analytical aggregations, indexing, and schema normalization.</p>
                         <div class="skill-tags"><span>Window Functions</span><span>CTEs</span><span>Query Tuning</span></div>
                     </div>
 
                     <div class="skill-card glass-card" data-category="database">
                         <div class="skill-card-header">
-                            <i class="fas fa-warehouse skill-icon text-indigo"></i>
-                            <span class="skill-level">AWS / Azure Warehouses</span>
+                            <i class="fas fa-server skill-icon text-purple"></i>
+                            <span class="skill-level">Databases</span>
                         </div>
-                        <h3>Redshift, Athena & Snowflake</h3>
-                        <p>Serverless SQL querying over S3 data lakes with AWS Athena and column-oriented data warehousing.</p>
-                        <div class="skill-tags"><span>Athena</span><span>Redshift</span><span>Data Lake</span></div>
+                        <h3>PostgreSQL, MySQL & MongoDB</h3>
+                        <p>Relational schema design, document store indexing, transaction management, REST API backend data integration.</p>
+                        <div class="skill-tags"><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span></div>
                     </div>
 
                     <div class="skill-card glass-card" data-category="cloud">
                         <div class="skill-card-header">
                             <i class="fab fa-aws skill-icon text-amber"></i>
-                            <span class="skill-level">AWS Ecosystem</span>
+                            <span class="skill-level">AWS & Azure</span>
                         </div>
-                        <h3>Amazon Web Services (AWS)</h3>
-                        <p>S3 data lakes, Glue Crawlers & Data Catalog, EC2 compute, IAM security, Lambda triggers, and RDS.</p>
-                        <div class="skill-tags"><span>S3</span><span>Glue</span><span>Lambda</span><span>IAM</span></div>
+                        <h3>AWS & Azure Cloud Platforms</h3>
+                        <p>AWS (S3, EC2, RDS, Lambda, Glue, Athena, Redshift, IAM, QuickSight); Azure Databricks, Blob Storage, Azure SQL.</p>
+                        <div class="skill-tags"><span>AWS S3</span><span>AWS Glue</span><span>EC2 & RDS</span><span>Athena</span></div>
                     </div>
 
                     <div class="skill-card glass-card" data-category="cloud">
                         <div class="skill-card-header">
-                            <i class="fab fa-microsoft skill-icon text-cyan"></i>
-                            <span class="skill-level">Azure Platform</span>
+                            <i class="fab fa-git-alt skill-icon text-rose"></i>
+                            <span class="skill-level">DevOps & Tools</span>
                         </div>
-                        <h3>Microsoft Azure Cloud</h3>
-                        <p>Azure Data Factory, Azure Blob Storage, Azure Databricks, Event Hubs streaming, Azure SQL Database.</p>
-                        <div class="skill-tags"><span>Databricks</span><span>ADF</span><span>Blob Storage</span></div>
+                        <h3>DevOps, CI/CD & Git</h3>
+                        <p>Git feature-branching, PR code reviews, GitHub Actions CI/CD pipelines, Docker basics, Linux server administration, Postman.</p>
+                        <div class="skill-tags"><span>Git</span><span>GitHub Actions</span><span>CI/CD</span><span>Docker</span><span>Linux</span></div>
                     </div>
 
                     <div class="skill-card glass-card" data-category="programming">
@@ -493,39 +490,29 @@
                             <i class="fab fa-python skill-icon text-yellow"></i>
                             <span class="skill-level">Primary Language</span>
                         </div>
-                        <h3>Python for Data Engineering</h3>
-                        <p>OOP Python, API integrations, data parsing (JSON, CSV, Parquet), automation scripts, and ETL modules.</p>
-                        <div class="skill-tags"><span>Python 3</span><span>APIs</span><span>Automation</span></div>
+                        <h3>Python & Web Frameworks</h3>
+                        <p>OOP Python, Pandas, NumPy, Django, Flask, React.js, REST API development and third-party API integration.</p>
+                        <div class="skill-tags"><span>Python</span><span>Django</span><span>Flask</span><span>React.js</span><span>REST APIs</span></div>
                     </div>
 
-                    <div class="skill-card glass-card" data-category="programming">
+                    <div class="skill-card glass-card" data-category="analytics">
                         <div class="skill-card-header">
-                            <i class="fas fa-terminal skill-icon text-emerald"></i>
-                            <span class="skill-level">Linux Shell</span>
+                            <i class="fas fa-eye skill-icon text-emerald"></i>
+                            <span class="skill-level">AI & Computer Vision</span>
                         </div>
-                        <h3>Linux Shell & Cron Automation</h3>
-                        <p>Command-line utilities, file handling, cron job scheduling, SSH remote server management (PuTTY, MobaXterm).</p>
-                        <div class="skill-tags"><span>Cron Jobs</span><span>SSH</span><span>Bash Scripting</span></div>
+                        <h3>YOLOv8 & Computer Vision</h3>
+                        <p>YOLOv8 object detection model training, Ultralytics, OpenCV medical image processing, and Streamlit web deployment.</p>
+                        <div class="skill-tags"><span>YOLOv8</span><span>OpenCV</span><span>Streamlit</span><span>GenAI</span></div>
                     </div>
 
                     <div class="skill-card glass-card" data-category="analytics">
                         <div class="skill-card-header">
                             <i class="fas fa-chart-line skill-icon text-amber"></i>
-                            <span class="skill-level">Visualization</span>
+                            <span class="skill-level">Analytics & BI</span>
                         </div>
                         <h3>Power BI & AWS QuickSight</h3>
                         <p>Creating interactive dashboards, KPIs, business intelligence reporting, and visualizing metrics for executive decisions.</p>
-                        <div class="skill-tags"><span>Power BI</span><span>QuickSight</span><span>Dashboards</span></div>
-                    </div>
-
-                    <div class="skill-card glass-card" data-category="analytics">
-                        <div class="skill-card-header">
-                            <i class="fas fa-brain skill-icon text-purple"></i>
-                            <span class="skill-level">AI & Analytics</span>
-                        </div>
-                        <h3>Pandas, Matplotlib & AI Tools</h3>
-                        <p>Exploratory Data Analysis (EDA), NumPy numerical arrays, Seaborn visualizations, and LLM API integrations.</p>
-                        <div class="skill-tags"><span>Pandas</span><span>NumPy</span><span>EDA</span><span>AI APIs</span></div>
+                        <div class="skill-tags"><span>Power BI</span><span>QuickSight</span><span>Matplotlib</span><span>Seaborn</span></div>
                     </div>
                 </div>
             </div>
@@ -536,21 +523,22 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-subtitle">&gt; PORTFOLIO & REPOSITORIES</span>
-                    <h2 class="section-title">Data Engineering Projects</h2>
+                    <h2 class="section-title">Featured Projects</h2>
                     <div class="title-underline"></div>
                 </div>
 
                 <!-- Project Category Controls -->
                 <div class="project-tabs" id="project-tabs">
-                    <button class="project-tab active" data-pcat="all">All Projects (7)</button>
-                    <button class="project-tab" data-pcat="repo">Featured Repositories</button>
-                    <button class="project-tab" data-pcat="live">Live & Ongoing</button>
+                    <button class="project-tab active" data-pcat="all">All Projects (8)</button>
+                    <button class="project-tab" data-pcat="de">Data Engineering</button>
+                    <button class="project-tab" data-pcat="ai">AI & Computer Vision</button>
+                    <button class="project-tab" data-pcat="web">Full-Stack & Web</button>
                     <button class="project-tab" data-pcat="freelance">Freelance Client Work</button>
                 </div>
 
                 <div class="projects-grid" id="projects-container">
                     <!-- Project 1: Databricks FMCG -->
-                    <div class="project-card glass-card" data-pcat="repo">
+                    <div class="project-card glass-card" data-pcat="de">
                         <div class="project-header">
                             <div class="project-type-badge"><i class="fab fa-microsoft"></i> Azure Databricks & Delta Lake</div>
                             <div class="project-links">
@@ -561,27 +549,60 @@
                         <div class="project-body">
                             <h3>Databricks FMCG End-to-End Data Pipeline</h3>
                             <p class="project-desc">
-                                High-performance FMCG retail data pipeline built on Azure Databricks using PySpark and Delta Lake, implementing Medallion Architecture (Bronze, Silver, Gold layers).
+                                Production-grade FMCG retail lakehouse pipeline built on Databricks consolidating multi-company retail data into AWS S3 using Medallion Architecture (Bronze/Silver/Gold) and Unity Catalog.
                             </p>
 
                             <div class="project-features">
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Ingested raw FMCG transactional logs into <strong>Bronze Delta Lake</strong> tables.</div>
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Performed PySpark cleaning, deduplication, and schema validation into <strong>Silver layer</strong>.</div>
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Constructed aggregated <strong>Gold layer</strong> star-schema tables for analytical reporting.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Implemented Medallion Architecture with Delta Lake ACID compliance and time travel.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Modeled Star Schema (fact & dimension tables) for optimized analytical queries.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Configured Unity Catalog centralized access control & Databricks Genie Spaces.</div>
                             </div>
 
                             <div class="project-tech-stack">
+                                <span>Databricks</span>
                                 <span>PySpark</span>
-                                <span>Azure Databricks</span>
                                 <span>Delta Lake</span>
-                                <span>Azure Blob Storage</span>
-                                <span>SQL</span>
+                                <span>Unity Catalog</span>
+                                <span>AWS S3</span>
+                                <span>Star Schema</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 2: YouTube Data Engineering -->
-                    <div class="project-card glass-card" data-pcat="repo">
+                    <!-- Project 2: Spine Segmentation YOLOv8 -->
+                    <div class="project-card glass-card" data-pcat="ai">
+                        <div class="project-header">
+                            <div class="project-type-badge"><i class="fas fa-eye text-emerald"></i> Computer Vision & AI</div>
+                            <div class="project-links">
+                                <a href="https://github.com/Saktheesh15" target="_blank" title="View GitHub Profile"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="project-body">
+                            <h3>Spine Segmentation using YOLOv8</h3>
+                            <p class="project-desc">
+                                Applied computer vision pipeline using YOLOv8 to automatically detect six lumbar spine anatomical regions (L1–L5, S1) from medical images with a web deployment interface.
+                            </p>
+
+                            <div class="project-features">
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Trained YOLOv8 deep learning model using Ultralytics on medical imaging datasets.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Built interactive <strong>Streamlit</strong> web application for real-time bounding-box inference.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Processed medical image arrays using OpenCV and NumPy for anatomical analysis.</div>
+                            </div>
+
+                            <div class="project-tech-stack">
+                                <span>Python</span>
+                                <span>YOLOv8</span>
+                                <span>Ultralytics</span>
+                                <span>OpenCV</span>
+                                <span>Streamlit</span>
+                                <span>Computer Vision</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: YouTube Data Engineering -->
+                    <div class="project-card glass-card" data-pcat="de">
                         <div class="project-header">
                             <div class="project-type-badge"><i class="fab fa-aws"></i> AWS Cloud Data Lake</div>
                             <div class="project-links">
@@ -590,15 +611,15 @@
                         </div>
 
                         <div class="project-body">
-                            <h3>Data Engineering YouTube Analysis Pipeline</h3>
+                            <h3>YouTube Data Engineering Platform</h3>
                             <p class="project-desc">
-                                End-to-end cloud data lake pipeline for ingesting, transforming, and analyzing semi-structured YouTube data (CSV/JSON) from multiple global regions into AWS S3.
+                                Cloud-based data engineering platform processing multi-source YouTube trending data (CSV/JSON) into Amazon S3 with automated Airflow/Glue orchestration.
                             </p>
 
                             <div class="project-features">
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Ingested multi-region YouTube metadata into raw S3 buckets.</div>
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Developed scalable <strong>PySpark</strong> ETL jobs for cleaning & schema normalization.</div>
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Automated cataloging with <strong>AWS Glue Crawlers</strong> and serverless SQL queries via <strong>AWS Athena</strong>.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Automated ETL pipelines using AWS Glue, Lambda, PySpark, and Airflow.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Architected Amazon S3 data lake with serverless Athena SQL querying.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Interactive QuickSight dashboards displaying trending metrics and regional patterns.</div>
                             </div>
 
                             <div class="project-tech-stack">
@@ -607,14 +628,14 @@
                                 <span>AWS S3</span>
                                 <span>AWS Glue</span>
                                 <span>AWS Athena</span>
-                                <span>Lambda</span>
+                                <span>Airflow</span>
                                 <span>QuickSight</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 3: Uber Real-Time Telemetry (Ongoing) -->
-                    <div class="project-card glass-card project-ongoing" data-pcat="live">
+                    <!-- Project 4: Uber Streaming (Ongoing) -->
+                    <div class="project-card glass-card project-ongoing" data-pcat="de">
                         <div class="project-header">
                             <div class="project-type-badge badge-pulse"><i class="fas fa-bolt"></i> Ongoing Live Project</div>
                             <div class="project-status-tag">Real-Time Streaming</div>
@@ -623,7 +644,7 @@
                         <div class="project-body">
                             <h3>Uber End-To-End Real-Time Telemetry Pipeline</h3>
                             <p class="project-desc">
-                                Real-time event streaming data engineering pipeline analyzing Uber trip telemetry, surge pricing algorithms, driver dispatch latency, and geo-spatial metrics.
+                                Real-time event streaming data pipeline analyzing Uber trip telemetry, surge pricing algorithms, driver dispatch latency, and geo-spatial metrics.
                             </p>
 
                             <div class="project-features">
@@ -642,8 +663,8 @@
                         </div>
                     </div>
 
-                    <!-- Project 4: Zomato AI Data Analytics (Ongoing) -->
-                    <div class="project-card glass-card project-ongoing" data-pcat="live">
+                    <!-- Project 5: Zomato AI Data Analytics (Ongoing) -->
+                    <div class="project-card glass-card project-ongoing" data-pcat="ai">
                         <div class="project-header">
                             <div class="project-type-badge badge-pulse"><i class="fas fa-brain"></i> Ongoing Live Project</div>
                             <div class="project-status-tag">AI Data Engineering</div>
@@ -652,11 +673,11 @@
                         <div class="project-body">
                             <h3>Zomato AI Data Analytics & Engineering Pipeline</h3>
                             <p class="project-desc">
-                                End-to-end AI-driven data engineering platform processing high-volume food delivery orders, restaurant ratings, pricing trends, and customer sentiment analytics.
+                                End-to-end AI-driven data engineering platform processing food delivery orders, restaurant ratings, pricing trends, and customer sentiment analytics.
                             </p>
 
                             <div class="project-features">
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Automated ETL extraction of restaurant order data and customer review logs.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Automated ETL extraction of restaurant order logs and customer review datasets.</div>
                                 <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> AI sentiment classification on customer reviews using <strong>LLM APIs</strong>.</div>
                                 <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> SQL analytical aggregations tracking order delivery SLA and peak sales hours.</div>
                             </div>
@@ -671,7 +692,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 5: Freelance Cloud Migration -->
+                    <!-- Project 6: Freelance Cloud Migration -->
                     <div class="project-card glass-card project-freelance" data-pcat="freelance">
                         <div class="project-header">
                             <div class="project-type-badge badge-freelance"><i class="fas fa-handshake"></i> Freelance Client Work</div>
@@ -681,13 +702,13 @@
                         <div class="project-body">
                             <h3>On-Premises Database to Cloud Migration</h3>
                             <p class="project-desc">
-                                Architected and executed seamless migration of client on-premises relational databases and flat files into a scalable AWS / Azure cloud data lake.
+                                Architected and executed migration of legacy on-premises relational databases and flat files into a scalable AWS / Azure cloud data lake with zero data loss.
                             </p>
 
                             <div class="project-features">
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Extracted legacy SQL Server database tables and transformed flat file storage.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Extracted legacy SQL Server tables and transformed flat file storage.</div>
                                 <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Built automated PySpark & AWS Glue crawlers for automated schema sync.</div>
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Guaranteed zero data loss and configured incremental delta updates.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Configured incremental delta updates and audit tracking.</div>
                             </div>
 
                             <div class="project-tech-stack">
@@ -700,37 +721,39 @@
                         </div>
                     </div>
 
-                    <!-- Project 6: Freelance Food & Restaurant Analytics -->
-                    <div class="project-card glass-card project-freelance" data-pcat="freelance">
+                    <!-- Project 7: AI Placement Training Support -->
+                    <div class="project-card glass-card" data-pcat="web">
                         <div class="project-header">
-                            <div class="project-type-badge badge-freelance"><i class="fas fa-handshake"></i> Freelance Client Work</div>
-                            <div class="project-status-tag">Active Client Pipeline</div>
+                            <div class="project-type-badge"><i class="fas fa-robot text-purple"></i> Full-Stack & AI</div>
+                            <div class="project-links">
+                                <a href="https://github.com/Saktheesh15/AI_Placement_Training_Support" target="_blank" title="View GitHub Repo"><i class="fab fa-github"></i></a>
+                            </div>
                         </div>
 
                         <div class="project-body">
-                            <h3>Food & Restaurant Order & Sales Data Pipeline</h3>
+                            <h3>AI Placement Training Support Platform</h3>
                             <p class="project-desc">
-                                Developed custom automated data pipelines for restaurant business to track real-time orders, daily revenue, customer ratings, and menu performance metrics.
+                                AI-powered placement training platform built with Next.js, TypeScript, and Firebase for personalized analytics-driven feedback and student progress tracking.
                             </p>
 
                             <div class="project-features">
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Automated ingestion of daily POS sales receipts and online order streams.</div>
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Built custom SQL analytical models evaluating item-wise profit margins.</div>
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Deployed interactive Power BI executive reporting dashboard for store owners.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Next.js & TypeScript frontend with reusable Tailwind CSS UI component library.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Firebase real-time database & authentication backend integration.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Automated feedback generation and placement readiness dashboards.</div>
                             </div>
 
                             <div class="project-tech-stack">
-                                <span>Python</span>
-                                <span>PostgreSQL</span>
-                                <span>Apache Airflow</span>
-                                <span>Power BI</span>
-                                <span>REST APIs</span>
+                                <span>Next.js</span>
+                                <span>TypeScript</span>
+                                <span>Tailwind CSS</span>
+                                <span>Firebase</span>
+                                <span>AI APIs</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 7: Spotify Data Analytics -->
-                    <div class="project-card glass-card" data-pcat="repo">
+                    <!-- Project 8: Spotify Data Analytics -->
+                    <div class="project-card glass-card" data-pcat="de">
                         <div class="project-header">
                             <div class="project-type-badge"><i class="fas fa-chart-bar"></i> Analytics & EDA Engine</div>
                             <div class="project-links">
@@ -741,7 +764,7 @@
                         <div class="project-body">
                             <h3>Spotify Data Analytics & Insights Engine</h3>
                             <p class="project-desc">
-                                Automated data extraction, transformation, and exploratory data analysis pipeline focusing on Spotify track features, audio metrics, and popularity trends.
+                                Automated data extraction, transformation, and exploratory data analysis pipeline evaluating Spotify track audio features and popularity trends.
                             </p>
 
                             <div class="project-features">
@@ -754,7 +777,7 @@
                                 <span>Python</span>
                                 <span>Spotify API</span>
                                 <span>Pandas</span>
-                                <span>NumPy</span>
+                                <span>MySQL</span>
                                 <span>Matplotlib</span>
                                 <span>Seaborn</span>
                             </div>
@@ -768,51 +791,81 @@
         <section id="experience" class="section alt-bg">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-subtitle">&gt; MY JOURNEY</span>
-                    <h2 class="section-title">Experience & Education</h2>
+                    <span class="section-subtitle">&gt; WORK & INTERNSHIPS</span>
+                    <h2 class="section-title">Work Experience & Education</h2>
                     <div class="title-underline"></div>
                 </div>
 
                 <div class="experience-timeline">
-                    <!-- Experience 1 -->
+                    <!-- Internship 1: DGI Worx -->
                     <div class="timeline-item glass-card">
-                        <div class="timeline-badge"><i class="fas fa-chart-line"></i></div>
+                        <div class="timeline-badge"><i class="fas fa-laptop-code text-cyan"></i></div>
                         <div class="timeline-content">
-                            <div class="timeline-date">Jun 2023 - Jul 2023</div>
-                            <h3 class="timeline-role">Data Analytics Specialist Workshop</h3>
-                            <h4 class="timeline-company"><i class="fas fa-building"></i> National Small Industries Corporation (NSIC)</h4>
+                            <div class="timeline-date">Jun 2026 – Present | Bengaluru</div>
+                            <h3 class="timeline-role">Full Stack Developer Intern</h3>
+                            <h4 class="timeline-company"><i class="fas fa-building"></i> DGI Worx</h4>
                             <ul class="timeline-bullets">
-                                <li>Gained hands-on practical exposure to enterprise data cleaning, SQL query optimization, and statistical data visualization techniques.</li>
-                                <li>Applied analytical formulas and SQL windowing logic to extract insights from raw real-world business datasets.</li>
+                                <li>Joined live production codebase built on React and Django; contributed frontend components and backend REST endpoints backed by PostgreSQL within first few weeks.</li>
+                                <li>Adoption of feature-branching, pull-request practices, and code reviews in shared Git workflow to safely merge changes without breaking production functionality.</li>
+                                <li>Took full ownership from requirement clarification through implementation and testing for production features delivered without rework.</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Experience 2 -->
+                    <!-- Internship 2: Manovate Technologies -->
                     <div class="timeline-item glass-card">
-                        <div class="timeline-badge"><i class="fas fa-laptop-code"></i></div>
+                        <div class="timeline-badge"><i class="fab fa-python text-yellow"></i></div>
                         <div class="timeline-content">
-                            <div class="timeline-date">Jun 2023 - Aug 2023</div>
+                            <div class="timeline-date">Oct 2025 – Apr 2026 | Chennai</div>
+                            <h3 class="timeline-role">Python Full Stack Developer Intern</h3>
+                            <h4 class="timeline-company"><i class="fas fa-building"></i> Manovate Technologies</h4>
+                            <ul class="timeline-bullets">
+                                <li>Built production-ready Python web applications (Django, Flask), REST APIs, and optimized MySQL/PostgreSQL relational database schemas.</li>
+                                <li>Automated raw dataset transformations and data validation routines using Python & Pandas scripts.</li>
+                                <li>Deployed and monitored production systems on AWS EC2 and RDS; implemented CI/CD release pipelines using Git and GitHub Actions.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Workshop: NSIC -->
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-badge"><i class="fas fa-chart-line text-amber"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2024 | Chennai</div>
+                            <h3 class="timeline-role">Data Analytics Specialist Workshop</h3>
+                            <h4 class="timeline-company"><i class="fas fa-building"></i> National Small Industries Corporation (NSIC)</h4>
+                            <ul class="timeline-bullets">
+                                <li>Applied Python and SQL for end-to-end cleaning, transformation, and statistical analysis on real-world raw datasets.</li>
+                                <li>Delivered structured analytical reports and visual insights to stakeholders.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Internship 4: Empower Guiding Center -->
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-badge"><i class="fas fa-code text-rose"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2023 | Chennai</div>
                             <h3 class="timeline-role">Frontend Web Development Intern</h3>
                             <h4 class="timeline-company"><i class="fas fa-building"></i> Empower Guiding Center</h4>
                             <ul class="timeline-bullets">
-                                <li>Built and styled responsive web user interfaces using HTML, CSS, JavaScript, Bootstrap, and React.js.</li>
-                                <li>Implemented reusable UI component patterns and optimized web interface layouts across mobile and desktop devices.</li>
+                                <li>Delivered web interfaces using HTML, CSS, JavaScript, Bootstrap, and React.js following structured development processes and team feedback.</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Education -->
                     <div class="timeline-item glass-card education-item">
-                        <div class="timeline-badge"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="timeline-badge"><i class="fas fa-graduation-cap text-purple"></i></div>
                         <div class="timeline-content">
-                            <div class="timeline-date">2021 - 2025</div>
+                            <div class="timeline-date">Nov 2021 – May 2025</div>
                             <h3 class="timeline-role">B.E. Computer Science and Engineering</h3>
-                            <h4 class="timeline-company"><i class="fas fa-university"></i> Sri Muthukumaran Institute of Technology</h4>
+                            <h4 class="timeline-company"><i class="fas fa-university"></i> Sri Muthukumaran Institute of Technology, Chennai</h4>
                             <div class="education-meta">
                                 <span class="meta-pill"><i class="fas fa-star text-amber"></i> CGPA: <strong>8.1 / 10.0</strong></span>
                                 <span class="meta-pill">HSC: <strong>80%</strong></span>
                                 <span class="meta-pill">SSLC: <strong>65%</strong></span>
+                                <span class="meta-pill text-emerald">No Active Backlogs</span>
                             </div>
                             <p class="education-desc">
                                 Specialized in Database Management Systems (DBMS), Operating Systems, Data Structures & Algorithms, Cloud Computing, and Software Engineering principles.
@@ -848,21 +901,22 @@
                         <button class="cli-cmd-btn" data-cmd="help">help</button>
                         <button class="cli-cmd-btn" data-cmd="certs">certs</button>
                         <button class="cli-cmd-btn" data-cmd="projects">projects</button>
-                        <button class="cli-cmd-btn" data-cmd="freelance">freelance</button>
-                        <button class="cli-cmd-btn" data-cmd="databricks">databricks</button>
+                        <button class="cli-cmd-btn" data-cmd="socials">socials</button>
+                        <button class="cli-cmd-btn" data-cmd="topmate">topmate</button>
+                        <button class="cli-cmd-btn" data-cmd="leetcode">leetcode</button>
                         <button class="cli-cmd-btn" data-cmd="clear">clear</button>
                     </div>
 
                     <div class="terminal-body" id="terminal-body">
                         <div class="terminal-line welcome-msg">
-                            Welcome to Saktheesh's Interactive Data Engineering CLI [Version 3.0.0].
-                            Type <span class="highlight-cmd">'certs'</span>, <span class="highlight-cmd">'projects'</span>, or <span class="highlight-cmd">'help'</span> to execute commands.
+                            Welcome to Saktheesh's Interactive Data Engineering CLI [Version 3.5.0].
+                            Type <span class="highlight-cmd">'certs'</span>, <span class="highlight-cmd">'projects'</span>, <span class="highlight-cmd">'socials'</span>, or <span class="highlight-cmd">'help'</span> to execute commands.
                         </div>
                     </div>
 
                     <div class="terminal-input-line">
                         <span class="prompt-user">saktheesh@databricks:~$</span>
-                        <input type="text" id="terminal-input" placeholder="Type command (e.g., certs, projects, freelance, databricks)..." autocomplete="off" spellcheck="false">
+                        <input type="text" id="terminal-input" placeholder="Type command (e.g., certs, projects, socials, topmate, leetcode)..." autocomplete="off" spellcheck="false">
                     </div>
                 </div>
             </div>
@@ -873,15 +927,15 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-subtitle">&gt; GET IN TOUCH</span>
-                    <h2 class="section-title">Let's Build Data Solutions</h2>
+                    <h2 class="section-title">Let me know if you would like to work together!</h2>
                     <div class="title-underline"></div>
                 </div>
 
                 <div class="contact-grid">
                     <div class="contact-info-card glass-card">
-                        <h3>Connect & Collaborate</h3>
+                        <h3>Connect & Book 1-on-1</h3>
                         <p>
-                            I am actively seeking full-time Data Engineering roles, Cloud Pipeline Specialist positions, and Freelance Data Engineering opportunities. Reach out directly!
+                            I am actively seeking full-time Data Engineering roles, Cloud Pipeline Specialist positions, and Freelance Data Engineering opportunities. Feel free to connect or schedule a meeting!
                         </p>
 
                         <div class="contact-list">
@@ -901,6 +955,14 @@
                                 </div>
                             </a>
 
+                            <a href="https://topmate.io/saktheesh/" target="_blank" class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-calendar-alt text-amber"></i></div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Topmate 1-on-1 Session</span>
+                                    <span class="contact-value">topmate.io/saktheesh</span>
+                                </div>
+                            </a>
+
                             <div class="contact-item">
                                 <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                                 <div class="contact-text">
@@ -910,12 +972,19 @@
                             </div>
                         </div>
 
-                        <div class="contact-social-buttons">
+                        <!-- All Social Connect Buttons Grid -->
+                        <div class="contact-social-buttons-grid">
                             <a href="https://github.com/Saktheesh15" target="_blank" class="btn btn-sm btn-secondary">
                                 <i class="fab fa-github"></i> GitHub
                             </a>
-                            <a href="https://www.linkedin.com/in/saktheesh-a-" target="_blank" class="btn btn-sm btn-primary">
+                            <a href="https://www.linkedin.com/in/saktheesh-a-/" target="_blank" class="btn btn-sm btn-primary">
                                 <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="https://leetcode.com/u/Saktheesh_A/" target="_blank" class="btn btn-sm btn-leetcode">
+                                <i class="fas fa-code"></i> LeetCode
+                            </a>
+                            <a href="https://topmate.io/saktheesh/" target="_blank" class="btn btn-sm btn-topmate">
+                                <i class="fas fa-user-astronaut"></i> Topmate
                             </a>
                         </div>
                     </div>
@@ -957,9 +1026,15 @@
                 <a href="#home" class="nav-logo">
                     <span class="logo-bracket">&lt;</span><span class="logo-name">Saktheesh</span><span class="logo-tag">.data</span><span class="logo-bracket">/&gt;</span>
                 </a>
-                <p>Microsoft Certified Azure Databricks Data Engineer | PySpark & AWS Data Lakes</p>
+                <p>Microsoft Certified Azure Databricks Data Engineer Associate | Chennai, India</p>
             </div>
             <div class="footer-right">
+                <div class="footer-links">
+                    <a href="https://github.com/Saktheesh15" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/saktheesh-a-/" target="_blank">LinkedIn</a>
+                    <a href="https://leetcode.com/u/Saktheesh_A/" target="_blank">LeetCode</a>
+                    <a href="https://topmate.io/saktheesh/" target="_blank">Topmate</a>
+                </div>
                 <p>&copy; 2026 Saktheeshwaran A. All rights reserved.</p>
                 <a href="#home" class="back-to-top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></a>
             </div>

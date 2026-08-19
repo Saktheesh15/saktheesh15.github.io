@@ -381,6 +381,27 @@ SUCCESS: Delta table 'gold_fmcg_analytics' updated (COMPACTION DONE).
 </div>`;
                 break;
 
+            case "leetcode":
+                responseHtml = `
+<div class="cmd-output output-warning">
+[LEETCODE PROFILE]
+------------------------------------------------
+User     : Saktheesh_A
+Profile  : https://leetcode.com/u/Saktheesh_A/
+Focus    : Data Structures, Algorithms, SQL Window Functions, Matrix Manipulation
+</div>`;
+                break;
+
+            case "topmate":
+                responseHtml = `
+<div class="cmd-output output-success">
+[TOPMATE 1-ON-1 SESSIONS & MENTORSHIP]
+------------------------------------------------
+Book Link : https://topmate.io/saktheesh/
+Services  : Data Engineering Guidance, Azure Databricks Learning, Resume Reviews
+</div>`;
+                break;
+
             case "socials":
             case "contact":
                 responseHtml = `
@@ -389,13 +410,14 @@ SUCCESS: Delta table 'gold_fmcg_analytics' updated (COMPACTION DONE).
 ------------------------------------------------
 • Email    : saktheeshanbzhagan@gmail.com
 • Phone    : +91 9566467921
-• GitHub   : github.com/Saktheesh15
-• LinkedIn : linkedin.com/in/saktheesh-a-
-• LeetCode : (Connect on LeetCode)
-• Topmate  : (Book a 1-on-1 session on Topmate)
+• GitHub   : https://github.com/Saktheesh15
+• LinkedIn : https://www.linkedin.com/in/saktheesh-a-/
+• LeetCode : https://leetcode.com/u/Saktheesh_A/
+• Topmate  : https://topmate.io/saktheesh/
 • Location : Chennai, Tamil Nadu, India
 </div>`;
                 break;
+
 
             case "clear":
                 termBody.innerHTML = "";
