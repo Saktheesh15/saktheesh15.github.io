@@ -1,9 +1,8 @@
 /* ==========================================================================
-   Saktheesh - Data Engineer Portfolio Interactive Logic
+   Saktheesh - Data Engineer Portfolio Interactive Logic (US / EU Style)
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Initialize All Interactive Modules
     initTypewriter();
     initNavbarScroll();
     initMobileMenu();
@@ -11,9 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initSkillFilters();
     initProjectFilters();
     initCounterAnimation();
-    initTerminalCLI();
     initResumeModal();
     initContactForm();
+    initCopyEmail();
 });
 
 /* --------------------------------------------------------------------------
@@ -24,11 +23,11 @@ function initTypewriter() {
     if (!typewriterEl) return;
 
     const phrases = [
-        "Microsoft Certified Data Engineer",
-        "Azure Databricks & Delta Lake Specialist",
-        "ETL & Cloud Data Architect (AWS / Azure)",
-        "PySpark & Apache Airflow Engineer",
-        "On-Prem to Cloud Migration Specialist"
+        "Microsoft Certified Azure Data Engineer",
+        "Databricks Unity Catalog & Delta Lake Architect",
+        "ETL & Cloud Data Pipeline Specialist (AWS / Azure)",
+        "PySpark & Apache Airflow Specialist",
+        "On-Premises to Cloud Migration Engineer"
     ];
 
     let phraseIdx = 0;
@@ -42,11 +41,11 @@ function initTypewriter() {
         if (isDeleting) {
             typewriterEl.textContent = currentPhrase.substring(0, charIdx - 1);
             charIdx--;
-            typeSpeed = 40;
+            typeSpeed = 35;
         } else {
             typewriterEl.textContent = currentPhrase.substring(0, charIdx + 1);
             charIdx++;
-            typeSpeed = 90;
+            typeSpeed = 85;
         }
 
         if (!isDeleting && charIdx === currentPhrase.length) {
@@ -73,14 +72,12 @@ function initNavbarScroll() {
     const sections = document.querySelectorAll("section");
 
     window.addEventListener("scroll", () => {
-        // Sticky class
         if (window.scrollY > 40) {
             navbar.classList.add("scrolled");
         } else {
             navbar.classList.remove("scrolled");
         }
 
-        // Scroll spy
         let currentSectionId = "";
         sections.forEach((section) => {
             const sectionTop = section.offsetTop - 120;
@@ -156,7 +153,6 @@ function initSkillFilters() {
 
     if (!searchInput || !skillCards.length) return;
 
-    // Search filter
     searchInput.addEventListener("input", (e) => {
         const term = e.target.value.toLowerCase().trim();
         
@@ -170,14 +166,13 @@ function initSkillFilters() {
         });
     });
 
-    // Category tabs filter
     tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
             tabs.forEach((t) => t.classList.remove("active"));
             tab.classList.add("active");
 
             const cat = tab.getAttribute("data-category");
-            searchInput.value = ""; // clear search on tab change
+            searchInput.value = "";
 
             skillCards.forEach((card) => {
                 const cardCat = card.getAttribute("data-category");
@@ -259,196 +254,7 @@ function initCounterAnimation() {
 }
 
 /* --------------------------------------------------------------------------
-   8. INTERACTIVE DATA CLI SIMULATOR
-   -------------------------------------------------------------------------- */
-function initTerminalCLI() {
-    const termBody = document.getElementById("terminal-body");
-    const termInput = document.getElementById("terminal-input");
-    const quickCmdBtns = document.querySelectorAll(".cli-cmd-btn");
-
-    if (!termInput || !termBody) return;
-
-    // Quick Command Buttons
-    quickCmdBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            const cmd = btn.getAttribute("data-cmd");
-            termInput.value = cmd;
-            executeCommand(cmd);
-            termInput.value = "";
-        });
-    });
-
-    // Enter Key
-    termInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            const cmd = termInput.value.trim();
-            if (cmd) {
-                executeCommand(cmd);
-                termInput.value = "";
-            }
-        }
-    });
-
-    function executeCommand(rawCmd) {
-        const cmd = rawCmd.toLowerCase().trim();
-
-        // Print input line
-        const inputLine = document.createElement("div");
-        inputLine.className = "terminal-line";
-        inputLine.innerHTML = `<span class="prompt-user">saktheesh@databricks:~$</span> <span>${escapeHtml(rawCmd)}</span>`;
-        termBody.appendChild(inputLine);
-
-        // Command Responses
-        let responseHtml = "";
-
-        switch (cmd) {
-            case "help":
-                responseHtml = `
-<div class="cmd-output output-info">Available Commands:</div>
-- <span class="highlight-cmd">certs</span>       : Display Microsoft Azure Databricks & Oracle Certifications
-- <span class="highlight-cmd">projects</span>    : List GitHub data pipeline repositories
-- <span class="highlight-cmd">freelance</span>   : View client cloud migration & restaurant analytics projects
-- <span class="highlight-cmd">databricks</span>  : Run Medallion Delta Lake pipeline simulation
-- <span class="highlight-cmd">socials</span>     : Display LinkedIn, GitHub, LeetCode, and Topmate links
-- <span class="highlight-cmd">contact</span>     : Show Saktheesh's phone, email, and location
-- <span class="highlight-cmd">clear</span>       : Clear CLI terminal screen
-`;
-                break;
-
-            case "certs":
-                responseHtml = `
-<div class="cmd-output output-success">
-[VERIFIED INDUSTRY CERTIFICATIONS]
-------------------------------------------------
-1. Microsoft Certified: Azure Databricks Data Engineer Associate
-   ID: A33FDCA4239653AF | Earned: July 2026
-
-2. Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate
-   ID: 323432310OCI25AICFA | Valid until: Oct 2027
-
-3. IBM SkillsBuild: SQL and Relational Databases 101
-   ID: DBO101EN | Issued: July 2025
-
-4. Besant Technologies: AI & Machine Learning Program
-   ID: BFT415B042 | Issued: Oct 2025
-
-5. Infosys Foundation: Python Web Developer (Grade A+)
-   ID: G-2025-G4352-0018 | Issued: March 2025
-</div>`;
-                break;
-
-            case "projects":
-                responseHtml = `
-<div class="cmd-output output-info">
-[DATA ENGINEERING REPOSITORIES & ONGOING WORK]
-------------------------------------------------
-1. Databricks FMCG Data Pipeline (Azure Databricks, Delta Lake, PySpark)
-   github.com/Saktheesh15/databricks-fmcg-data-pipeline.git
-
-2. YouTube Cloud Analytics (AWS S3, Glue, PySpark, Athena)
-   github.com/Saktheesh15/Data-Engineering-youtube-analysis-project.git
-
-3. Spotify Data Analytics (Python, Spotify API, Pandas, EDA)
-   github.com/Saktheesh15/spotify_data_analytics.git
-
-4. [LIVE] Uber Real-Time Telemetry (Spark Streaming, Kafka, Azure)
-5. [LIVE] Zomato AI Analytics (PySpark, AI Models, Power BI)
-</div>`;
-                break;
-
-            case "freelance":
-                responseHtml = `
-<div class="cmd-output output-success">
-[FREELANCE CLIENT ENGAGEMENTS]
-------------------------------------------------
-• On-Premises to Cloud Database Migration:
-  Architected seamless migration of legacy SQL tables to AWS S3 & Azure Blob data lakes.
-
-• Restaurant & Food Chain Sales Data Pipeline:
-  Automated POS sales ingestion, SQL revenue modeling, and Power BI dashboards.
-</div>`;
-                break;
-
-            case "databricks":
-                responseHtml = `
-<div class="cmd-output output-warning">
-[AZURE DATABRICKS DELTA LAKE PIPELINE EXECUTION]
-------------------------------------------------
-26/08/19 23:55:01 INFO DeltaLog: Initializing Delta Lake log for table 'bronze_fmcg_sales'
-26/08/19 23:55:02 INFO PySparkJob: Cleaning schema & deduplicating records -> silver_fmcg_sales
-26/08/19 23:55:04 INFO GoldLayerAggregator: Computing monthly store revenue & inventory turnover
-SUCCESS: Delta table 'gold_fmcg_analytics' updated (COMPACTION DONE).
-</div>`;
-                break;
-
-            case "leetcode":
-                responseHtml = `
-<div class="cmd-output output-warning">
-[LEETCODE PROFILE]
-------------------------------------------------
-User     : Saktheesh_A
-Profile  : https://leetcode.com/u/Saktheesh_A/
-Focus    : Data Structures, Algorithms, SQL Window Functions, Matrix Manipulation
-</div>`;
-                break;
-
-            case "topmate":
-                responseHtml = `
-<div class="cmd-output output-success">
-[TOPMATE 1-ON-1 SESSIONS & MENTORSHIP]
-------------------------------------------------
-Book Link : https://topmate.io/saktheesh/
-Services  : Data Engineering Guidance, Azure Databricks Learning, Resume Reviews
-</div>`;
-                break;
-
-            case "socials":
-            case "contact":
-                responseHtml = `
-<div class="cmd-output output-info">
-[CONNECT & REACH OUT TO SAKTHEESH]
-------------------------------------------------
-• Email    : saktheeshanbzhagan@gmail.com
-• Phone    : +91 9566467921
-• GitHub   : https://github.com/Saktheesh15
-• LinkedIn : https://www.linkedin.com/in/saktheesh-a-/
-• LeetCode : https://leetcode.com/u/Saktheesh_A/
-• Topmate  : https://topmate.io/saktheesh/
-• Location : Chennai, Tamil Nadu, India
-</div>`;
-                break;
-
-
-            case "clear":
-                termBody.innerHTML = "";
-                return;
-
-            default:
-                responseHtml = `
-<div class="cmd-output output-warning">
-Command not recognized: '${escapeHtml(cmd)}'. Type <span class="highlight-cmd">'help'</span> for list of commands.
-</div>`;
-                break;
-        }
-
-        const responseLine = document.createElement("div");
-        responseLine.className = "terminal-line";
-        responseLine.innerHTML = responseHtml;
-        termBody.appendChild(responseLine);
-
-        // Auto Scroll to bottom
-        termBody.scrollTop = termBody.scrollHeight;
-    }
-
-    function escapeHtml(str) {
-        return str.replace(/[&<>"']/g, (m) => ({
-            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
-        })[m]);
-    }
-}
-
-/* --------------------------------------------------------------------------
-   9. CV RESUME MODAL HANDLER
+   8. CV RESUME MODAL HANDLER
    -------------------------------------------------------------------------- */
 function initResumeModal() {
     const modal = document.getElementById("cv-modal");
@@ -471,15 +277,69 @@ function initResumeModal() {
 }
 
 /* --------------------------------------------------------------------------
-   10. CONTACT FORM HANDLER
+   9. DIRECT EMAIL FORM SUBMISSION HANDLER
    -------------------------------------------------------------------------- */
 function initContactForm() {
     const form = document.getElementById("contact-form");
     const statusDiv = document.getElementById("form-status");
 
-    if (!form || !statusDiv) return;
+    if (!form) return;
 
     form.addEventListener("submit", (e) => {
-        statusDiv.innerHTML = '<span class="text-cyan"><i class="fas fa-spinner fa-spin"></i> Sending message...</span>';
+        e.preventDefault();
+
+        const name = document.getElementById("contact-name").value.trim();
+        const email = document.getElementById("contact-email").value.trim();
+        const subject = document.getElementById("contact-subject").value.trim();
+        const message = document.getElementById("contact-message").value.trim();
+
+        const mailtoSubject = encodeURIComponent(subject || `Inquiry from ${name}`);
+        const mailtoBody = encodeURIComponent(`Hi Saktheesh,\n\n${message}\n\nFrom: ${name} (${email})`);
+
+        // Open native email app cleanly
+        window.location.href = `mailto:saktheeshanbzhagan@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+        if (statusDiv) {
+            statusDiv.innerHTML = '<span class="text-cyan"><i class="fas fa-check-circle"></i> Opening your email application to send directly to saktheeshanbzhagan@gmail.com!</span>';
+        }
+        showToast("Email application opened! Click send to deliver message.");
     });
+}
+
+/* --------------------------------------------------------------------------
+   10. COPY EMAIL TO CLIPBOARD
+   -------------------------------------------------------------------------- */
+function initCopyEmail() {
+    const copyBtn = document.getElementById("copy-email-btn");
+    if (!copyBtn) return;
+
+    copyBtn.addEventListener("click", () => {
+        navigator.clipboard.writeText("saktheeshanbzhagan@gmail.com").then(() => {
+            showToast("Copied email address: saktheeshanbzhagan@gmail.com");
+        }).catch(() => {
+            showToast("Email: saktheeshanbzhagan@gmail.com");
+        });
+    });
+}
+
+/* --------------------------------------------------------------------------
+   11. TOAST NOTIFICATION UTILITY
+   -------------------------------------------------------------------------- */
+function showToast(msg) {
+    const container = document.getElementById("toast-container");
+    if (!container) return;
+
+    const toast = document.createElement("div");
+    toast.className = "toast-message";
+    toast.innerHTML = `<i class="fas fa-info-circle text-cyan"></i> <span>${msg}</span>`;
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.add("show");
+    }, 10);
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 300);
+    }, 3500);
 }
