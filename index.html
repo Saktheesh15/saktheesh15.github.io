@@ -1,409 +1,830 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saktheesh - Software Developer & Data Engineer</title>
-    <link rel="icon" href="assets/images/profile.jpg">
+    <title>Saktheesh | Data Engineer & Cloud Data Architect</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Saktheesh - Data Engineer specializing in PySpark, Apache Airflow, SQL, AWS/GCP/Azure Cloud Data Lakes, and ETL Pipelines. View projects, skills, and resume.">
+    <meta name="keywords" content="Saktheesh, Data Engineer, PySpark, Airflow, AWS Glue, Athena, Redshift, SQL, Data Pipelines, ETL, Data Analytics, Chennai">
+    <meta name="author" content="Saktheesh">
+    <link rel="canonical" href="https://saktheesh15.github.io/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saktheesh15.github.io/">
+    <meta property="og:title" content="Saktheesh | Data Engineer & Cloud Data Architect">
+    <meta property="og:description" content="Data Engineer specializing in ETL Pipelines, PySpark, SQL, Apache Airflow, and AWS/GCP/Azure Cloud Analytics.">
+    <meta property="og:image" content="assets/images/profile.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/profile.jpg" type="image/jpeg">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Background Animated Mesh Grid -->
+    <div class="bg-mesh"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Saktheesh</a>
-            </div>
+            <a href="#home" class="nav-logo" id="nav-logo">
+                <span class="logo-bracket">&lt;</span><span class="logo-name">Saktheesh</span><span class="logo-tag">.data</span><span class="logo-bracket">/&gt;</span>
+                <span class="status-indicator" title="Pipeline Active"><span class="status-dot"></span><span class="status-text">Active</span></span>
+            </a>
+
             <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#home" class="nav-link active"><i class="fas fa-terminal"></i> Home</a>
+                <a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a>
+                <a href="#skills" class="nav-link"><i class="fas fa-cogs"></i> Skills</a>
+                <a href="#projects" class="nav-link"><i class="fas fa-database"></i> Projects</a>
+                <a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a>
+                <a href="#cli" class="nav-link"><i class="fas fa-code"></i> Data CLI</a>
+                <a href="#contact" class="nav-link"><i class="fas fa-paper-plane"></i> Contact</a>
             </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="nav-actions">
+                <button id="cv-modal-trigger" class="btn btn-sm btn-outline-glow">
+                    <i class="fas fa-file-pdf"></i> <span>Resume</span>
+                </button>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Hi, I'm <span class="highlight">Saktheesh </span>
-                </h1>
-                <p class="hero-subtitle">Software Developer & Data Engineer</p>
-                <p class="hero-description">
-                    Passionate about building scalable web applications and implementing robust data pipelines. 
-                    Currently specializing in full-stack development, ETL workflows, and cloud infrastructure automation.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <button id="view-cv-btn" class="btn btn-secondary">View CV</button>
-                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-card">
-                    <div class="profile-img">
-                        <img src="assets/images/profile.jpg" alt="Saktheesh Profile Picture">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                   <p>
-                    My name is Saktheesh, and I've recently completed my Bachelor's degree in Computer Science and Engineering. Throughout my academic journey, I gained hands-on experience with full-stack development and data engineering, building a strong foundation in modern web technologies and data processing.
-                   </p>
-                   <p>
-                   I've developed multiple projects that demonstrate my ability to design and implement scalable applications and data pipelines. One of my key projects was an AI-powered placement training platform using Next.js, TypeScript, and Firebase. I also built comprehensive data engineering solutions using Python, PySpark, and AWS services for processing and analyzing large datasets.
-                   </p>
-                  <p>
-                  I've worked on several automation and data analysis projects involving ETL pipelines, cloud infrastructure, and real-time data processing, which are available on my GitHub. These experiences have strengthened my understanding of software development principles such as scalability, reliability, and continuous delivery.
-                  </p>
-                 <p>
-                 I'm passionate about automating workflows and continuously expanding my knowledge of emerging technologies in software development and data engineering. I'm now seeking an opportunity to join a forward-thinking organization where I can contribute my skills and grow as a Software Developer & Data Engineer.
-                 </p>
-
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>4+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat">
-                            <h3>1+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat">
-                            <h3>8.1</h3>
-                            <p>CGPA</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Jun 2023 - Aug 2023</div>
-                        <h3>Frontend Web Development Intern</h3>
-                        <h4>Empower Guiding Center</h4>
-                        <ul>
-                            <li>Built and styled responsive web pages using HTML, CSS, JavaScript, Bootstrap, and React.js</li>
-                            <li>Improved UI/UX and implemented reusable components for faster development</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Jun 2023 - Jul 2023</div>
-                        <h3>Data Analytics Workshop</h3>
-                        <h4>National Small Industries Corporation (NSIC)</h4>
-                        <ul>
-                            <li>Gained hands-on exposure to data cleaning, SQL queries, and visualization techniques</li>
-                            <li>Learned practical methods for analyzing real-world datasets and generating insights</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/project1.jpg" alt="AI Placement Training & Support">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/Saktheesh15/AI_Placement_Training_Support" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>AI Placement Training & Support</h3>
-                        <p>AI-powered web platform providing personalized training & placement recommendations, dashboards, and student progress tracking with analytics and personalized feedback.</p>
-                        <div class="project-tech">
-                            <span>Next.js</span>
-                            <span>TypeScript</span>
-                            <span>Tailwind CSS</span>
-                            <span>Firebase</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/project2.jpg" alt="Data Engineering YouTube Analysis">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/Saktheesh15/Data-Engineering-youtube-analysis-project" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Data Engineering YouTube Analysis</h3>
-                        <p>Comprehensive data engineering project analyzing YouTube data using ETL pipelines, data warehousing, and visualization to extract insights from video metadata and engagement metrics.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>PySpark</span>
-                            <span>AWS S3</span>
-                            <span>SQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/project3.jpg" alt="Online Complaint Registration & Management">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/Saktheesh15/Online-Complaint-Registration-And-Management-System" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Online Complaint Registration & Management</h3>
-                        <p>Full-stack complaint management system with role-based access (admin & users), status tracking, and responsive UI for efficient complaint handling.</p>
-                        <div class="project-tech">
-                            <span>React.js</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>Bootstrap</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/project4.jpg" alt="Spotify Data Analytics">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/Saktheesh15/spotify_data_analytics" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Spotify Data Analytics</h3>
-                        <p>Comprehensive data analysis of Spotify track features using the Spotify API. EDA, visualization and insights on tempo, energy, and popularity trends.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Pandas</span>
-                            <span>Matplotlib</span>
-                            <span>Spotify API</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">TypeScript</span>
-                        <span class="skill-item">SQL</span>
-                        <span class="skill-item">HTML</span>
-                        <span class="skill-item">CSS</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">React.js</span>
-                        <span class="skill-item">Next.js</span>
-                        <span class="skill-item">Tailwind CSS</span>
-                        <span class="skill-item">Bootstrap</span>
-                        <span class="skill-item">HTML5</span>
-                        <span class="skill-item">CSS3</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> Backend</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Node.js</span>
-                        <span class="skill-item">Express.js</span>
-                        <span class="skill-item">REST APIs</span>
-                        <span class="skill-item">Firebase</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Databases</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">MongoDB</span>
-                        <span class="skill-item">MySQL</span>
-                        <span class="skill-item">SQL</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-chart-line"></i> Data & Analytics</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">PySpark</span>
-                        <span class="skill-item">Pandas</span>
-                        <span class="skill-item">NumPy</span>
-                        <span class="skill-item">Matplotlib</span>
-                        <span class="skill-item">Seaborn</span>
-                        <span class="skill-item">Power BI</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">AWS S3</span>
-                        <span class="skill-item">AWS EC2</span>
-                        <span class="skill-item">AWS Glue</span>
-                        <span class="skill-item">AWS Athena</span>
-                        <span class="skill-item">AWS Lambda</span>
-                        <span class="skill-item">AWS IAM</span>
-                        <span class="skill-item">AWS RDS</span>
-                        <span class="skill-item">AWS Redshift</span>
-                        <span class="skill-item">GCP GCS</span>
-                        <span class="skill-item">GCP Compute Engine</span>
-                        <span class="skill-item">GCP Cloud SQL</span>
-                        <span class="skill-item">Azure Blob Storage</span>
-                        <span class="skill-item">Azure Databricks</span>
-                        <span class="skill-item">Azure Virtual Machines</span>
-                        <span class="skill-item">Azure SQL Database</span>
-                        <span class="skill-item">Firebase</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's work together!</h3>
-                    <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out if you'd like to collaborate or just say hello!</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>saktheeshanbzhagan@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+91 9566467921</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Chennai, Tamil Nadu, India</span>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/Saktheesh15" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/saktheesh-a-" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:saktheeshanbzhagan@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Saktheesh ❤︎ All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- CV Modal -->
-    <div id="cv-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Saktheesh - Resume</h2>
-                <div class="modal-actions">
-                    <button id="download-cv-btn" class="btn btn-primary">
-                        <i class="fas fa-download"></i> Download Software Developer CV
-                    </button>
-                    <button id="download-data-cv-btn" class="btn btn-secondary">
-                        <i class="fas fa-download"></i> Download Data Engineer CV
-                    </button>
-                    <span class="close">&times;</span>
-                </div>
-            </div>
-            <div class="modal-body">
-                <div class="cv-viewer">
-                    <div class="cv-loading" id="cv-loading">
-                        <div class="loading-spinner"></div>
-                        <p>Loading resume...</p>
-                    </div>
-                    <iframe id="cv-iframe" width="100%" height="600px" frameborder="0" style="display: none;">
-                    </iframe>
-                    <div class="cv-fallback" id="cv-fallback" style="display: none;">
-                        <div class="fallback-message">
-                            <i class="fas fa-file-pdf" style="font-size: 3rem; color: #3b82f6; margin-bottom: 1rem;"></i>
-                            <h3>Resume Preview</h3>
-                            <p>Your browser doesn't support PDF viewing. Use the buttons above to download or open in a new tab.</p>
-                            <div class="fallback-buttons">
-                                <button id="retry-cv-btn" class="btn btn-outline">
-                                    <i class="fas fa-redo"></i> Try Again
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cv-embed-fallback" id="cv-embed-fallback" style="display: none;">
-                        <embed id="cv-embed" src="/placeholder.svg" type="application/pdf" width="100%" height="600px">
-                    </div>
-                </div>
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-inner">
+            <a href="#home" class="mobile-link"><i class="fas fa-terminal"></i> Home</a>
+            <a href="#about" class="mobile-link"><i class="fas fa-user"></i> About</a>
+            <a href="#skills" class="mobile-link"><i class="fas fa-cogs"></i> Skills & Stack</a>
+            <a href="#projects" class="mobile-link"><i class="fas fa-database"></i> Data Projects</a>
+            <a href="#experience" class="mobile-link"><i class="fas fa-briefcase"></i> Experience</a>
+            <a href="#cli" class="mobile-link"><i class="fas fa-code"></i> Data CLI</a>
+            <a href="#contact" class="mobile-link"><i class="fas fa-paper-plane"></i> Contact</a>
+            <div class="mobile-actions">
+                <a href="assets/Saktheesh_Data_Engineer_Resume.pdf" target="_blank" class="btn btn-primary btn-block">
+                    <i class="fas fa-download"></i> Download Data Resume
+                </a>
             </div>
         </div>
     </div>
 
+    <!-- Main Content Container -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="badge-pill">
+                        <i class="fas fa-database glow-icon"></i>
+                        <span>Data Engineering & Cloud Analytics</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Saktheesh</span>
+                    </h1>
+
+                    <div class="typewriter-box">
+                        <span class="typewriter-prefix">&gt; </span>
+                        <span id="typewriter" class="typewriter-text"></span>
+                        <span class="cursor">|</span>
+                    </div>
+
+                    <p class="hero-description">
+                        Computer Science graduate passionate about building robust <strong>ETL / ELT pipelines</strong>, 
+                        designing cloud data lakes across <strong>AWS, GCP & Azure</strong>, orchestrating workflows with 
+                        <strong>Apache Airflow</strong>, and optimizing large-scale data processing using <strong>PySpark & SQL</strong>.
+                    </p>
+
+                    <div class="hero-badges">
+                        <div class="tech-badge"><i class="fab fa-python"></i> Python</div>
+                        <div class="tech-badge"><i class="fas fa-database"></i> SQL / Window Functions</div>
+                        <div class="tech-badge"><i class="fas fa-bolt"></i> PySpark</div>
+                        <div class="tech-badge"><i class="fas fa-wind"></i> Apache Airflow</div>
+                        <div class="tech-badge"><i class="fab fa-aws"></i> AWS (S3, Glue, Athena)</div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary glow-button">
+                            <i class="fas fa-project-diagram"></i> Explore Data Pipelines
+                        </a>
+                        <button id="hero-resume-btn" class="btn btn-secondary glass-button">
+                            <i class="fas fa-file-alt"></i> View Data Resume
+                        </button>
+                        <a href="#cli" class="btn btn-terminal glass-button">
+                            <i class="fas fa-terminal"></i> Launch Data CLI
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="profile-card-glass">
+                        <div class="profile-avatar-wrapper">
+                            <img src="assets/images/profile.jpg" alt="Saktheesh Data Engineer" class="profile-avatar">
+                            <div class="avatar-ring"></div>
+                        </div>
+                        <div class="profile-meta">
+                            <h3>Saktheeshwaran A</h3>
+                            <p class="profile-role"><i class="fas fa-server"></i> Data Engineer Specialist</p>
+                            <div class="profile-location">
+                                <i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu, India
+                            </div>
+                        </div>
+                        <div class="profile-pipeline-status">
+                            <div class="pipeline-node">
+                                <span class="node-dot active"></span>
+                                <span class="node-label">Ingest</span>
+                            </div>
+                            <div class="pipeline-connector"></div>
+                            <div class="pipeline-node">
+                                <span class="node-dot active"></span>
+                                <span class="node-label">Transform (PySpark)</span>
+                            </div>
+                            <div class="pipeline-connector"></div>
+                            <div class="pipeline-node">
+                                <span class="node-dot active"></span>
+                                <span class="node-label">Warehouse (S3/Athena)</span>
+                            </div>
+                        </div>
+                        <div class="profile-socials">
+                            <a href="https://github.com/Saktheesh15" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/saktheesh-a-" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:saktheeshanbzhagan@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics Banner -->
+        <section class="metrics-banner">
+            <div class="container grid-4-cols">
+                <div class="metric-card">
+                    <div class="metric-icon"><i class="fas fa-stream"></i></div>
+                    <div class="metric-info">
+                        <h3 class="counter" data-target="50">0</h3><span class="metric-plus">M+</span>
+                        <p>Records Processed</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <div class="metric-info">
+                        <h3 class="counter" data-target="15">0</h3><span class="metric-plus">+</span>
+                        <p>Cloud & Big Data Tools</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="metric-info">
+                        <h3><span class="counter" data-target="8">0</span>.<span class="counter" data-target="1">0</span></h3>
+                        <p>B.E. Computer Science CGPA</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="metric-info">
+                        <h3>99.9%</h3>
+                        <p>Pipeline Reliability Goal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">&gt; WHO I AM</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text-card glass-card">
+                        <h3>Architecting Reliable & Scalable Data Pipelines</h3>
+                        <p>
+                            I am a <strong>Computer Science & Engineering graduate</strong> dedicated exclusively to <strong>Data Engineering</strong>. 
+                            My passion lies in taking messy, unstructured, or high-volume datasets and crafting seamless, automated data pipelines 
+                            that feed actionable analytics and data warehouses.
+                        </p>
+                        <p>
+                            I possess strong hands-on expertise in writing complex <strong>SQL queries</strong> (window functions, analytical aggregations, subqueries), 
+                            building batch and streaming ETL workflows in <strong>Python & PySpark</strong>, and orchestrating workflows using <strong>Apache Airflow</strong>.
+                        </p>
+                        <p>
+                            On the cloud front, I work comfortably with <strong>AWS (S3, Glue, Athena, Redshift, Lambda, IAM)</strong>, 
+                            <strong>GCP (GCS, Compute Engine, Cloud SQL)</strong>, and <strong>Azure (Blob Storage, Databricks)</strong>, 
+                            ensuring data security, high throughput, and cost-efficient storage.
+                        </p>
+
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle text-cyan"></i>
+                                <span>Scalable Data Lake & Warehouse Architecture</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle text-cyan"></i>
+                                <span>Advanced SQL & PySpark Optimization</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle text-cyan"></i>
+                                <span>Multi-Cloud (AWS, GCP, Azure) Services</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle text-cyan"></i>
+                                <span>Workflow Automation with Apache Airflow & Linux Cron</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-pillars">
+                        <div class="pillar-card glass-card">
+                            <div class="pillar-icon"><i class="fas fa-network-wired"></i></div>
+                            <h4>ETL Pipeline Engineering</h4>
+                            <p>Ingesting, cleaning, validating, and transforming structured & JSON data streams using Python, PySpark, and Pandas.</p>
+                        </div>
+                        <div class="pillar-card glass-card">
+                            <div class="pillar-icon"><i class="fab fa-aws"></i></div>
+                            <h4>Cloud Data Services</h4>
+                            <p>Building automated data lakes on AWS S3, Glue crawlers, Athena querying engine, and Azure Databricks analytics.</p>
+                        </div>
+                        <div class="pillar-card glass-card">
+                            <div class="pillar-icon"><i class="fas fa-database"></i></div>
+                            <h4>Data Warehousing & SQL</h4>
+                            <p>Designing optimized relational & NoSQL schema architectures across MySQL, PostgreSQL, MongoDB, and Redshift.</p>
+                        </div>
+                        <div class="pillar-card glass-card">
+                            <div class="pillar-icon"><i class="fas fa-clock"></i></div>
+                            <h4>Workflow Scheduling</h4>
+                            <p>Defining Apache Airflow DAGs, automated task retries, cron jobs, and SSH/Linux server task orchestration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">&gt; TECH MATRIX</span>
+                    <h2 class="section-title">Data Engineering Tech Stack</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <!-- Skill Controls -->
+                <div class="skill-controls">
+                    <div class="skill-search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="skill-search" placeholder="Search skills (e.g. PySpark, Airflow, AWS, SQL)...">
+                    </div>
+                    <div class="skill-tabs" id="skill-tabs">
+                        <button class="skill-tab active" data-category="all">All Tech</button>
+                        <button class="skill-tab" data-category="pipeline">Pipelines & Workflow</button>
+                        <button class="skill-tab" data-category="database">Databases & Warehouses</button>
+                        <button class="skill-tab" data-category="cloud">Cloud Platforms</button>
+                        <button class="skill-tab" data-category="programming">Languages & Linux</button>
+                        <button class="skill-tab" data-category="analytics">Analytics & Visualization</button>
+                    </div>
+                </div>
+
+                <!-- Skill Grid -->
+                <div class="skills-grid" id="skills-container">
+                    <!-- Pipelines & Workflow -->
+                    <div class="skill-card glass-card" data-category="pipeline">
+                        <div class="skill-card-header">
+                            <i class="fas fa-wind skill-icon text-cyan"></i>
+                            <span class="skill-level">Core Tool</span>
+                        </div>
+                        <h3>Apache Airflow</h3>
+                        <p>DAG creation, workflow scheduling, task dependencies, operator configuration, and automated error retries.</p>
+                        <div class="skill-tags"><span>DAGs</span><span>Scheduling</span><span>Operators</span></div>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="pipeline">
+                        <div class="skill-card-header">
+                            <i class="fas fa-bolt skill-icon text-amber"></i>
+                            <span class="skill-level">Big Data</span>
+                        </div>
+                        <h3>PySpark</h3>
+                        <p>Distributed data processing, DataFrame transformations, RDD operations, and PySpark SQL aggregations.</p>
+                        <div class="skill-tags"><span>Big Data</span><span>Spark SQL</span><span>Transformations</span></div>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="pipeline">
+                        <div class="skill-card-header">
+                            <i class="fas fa-stream skill-icon text-emerald"></i>
+                            <span class="skill-level">Core Expertise</span>
+                        </div>
+                        <h3>ETL / ELT Pipelines</h3>
+                        <p>Automated batch data extraction, cleaning, schema validation, transformation logic, and warehouse loading.</p>
+                        <div class="skill-tags"><span>Extraction</span><span>Transformation</span><span>Data Lake</span></div>
+                    </div>
+
+                    <!-- Databases & Warehouses -->
+                    <div class="skill-card glass-card" data-category="database">
+                        <div class="skill-card-header">
+                            <i class="fas fa-database skill-icon text-blue"></i>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <h3>SQL & Query Optimization</h3>
+                        <p>Expertise in CTEs, complex JOINs, window functions (ROW_NUMBER, RANK, LEAD/LAG), subqueries, and indexing.</p>
+                        <div class="skill-tags"><span>Window Functions</span><span>CTEs</span><span>Query Tuning</span></div>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="database">
+                        <div class="skill-card-header">
+                            <i class="fas fa-server skill-icon text-purple"></i>
+                            <span class="skill-level">RDBMS / NoSQL</span>
+                        </div>
+                        <h3>MySQL & MongoDB</h3>
+                        <p>Relational schema design, document store indexing, transaction management, and aggregation pipelines.</p>
+                        <div class="skill-tags"><span>MySQL</span><span>MongoDB</span><span>NoSQL</span></div>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="database">
+                        <div class="skill-card-header">
+                            <i class="fas fa-warehouse skill-icon text-indigo"></i>
+                            <span class="skill-level">AWS Warehouse</span>
+                        </div>
+                        <h3>AWS Redshift & Athena</h3>
+                        <p>Serverless interactive querying over S3 data lakes with AWS Athena and column-oriented Redshift data warehousing.</p>
+                        <div class="skill-tags"><span>Athena</span><span>Redshift</span><span>Data Lake</span></div>
+                    </div>
+
+                    <!-- Cloud Platforms -->
+                    <div class="skill-card glass-card" data-category="cloud">
+                        <div class="skill-card-header">
+                            <i class="fab fa-aws skill-icon text-amber"></i>
+                            <span class="skill-level">AWS Ecosystem</span>
+                        </div>
+                        <h3>Amazon Web Services (AWS)</h3>
+                        <p>Hands-on setup with S3 data lakes, Glue Crawlers & Data Catalog, EC2 compute, IAM roles, Lambda triggers, and RDS.</p>
+                        <div class="skill-tags"><span>S3</span><span>Glue</span><span>Lambda</span><span>IAM</span><span>EC2</span></div>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="cloud">
+                        <div class="skill-card-header">
+                            <i class="fab fa-google skill-icon text-rose"></i>
+                            <span class="skill-level">GCP Basics</span>
+                        </div>
+                        <h3>Google Cloud Platform (GCP)</h3>
+                        <p>Storage management using Google Cloud Storage (GCS), Compute Engine VMs, and GCP Cloud SQL database instances.</p>
+                        <div class="skill-tags"><span>GCS</span><span>Compute Engine</span><span>Cloud SQL</span></div>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="cloud">
+                        <div class="skill-card-header">
+                            <i class="fab fa-microsoft skill-icon text-cyan"></i>
+                            <span class="skill-level">Azure Platform</span>
+                        </div>
+                        <h3>Microsoft Azure</h3>
+                        <p>Data lake storage using Azure Blob Storage, Apache Spark processing via Azure Databricks, and Azure SQL DB.</p>
+                        <div class="skill-tags"><span>Databricks</span><span>Blob Storage</span><span>Azure SQL</span></div>
+                    </div>
+
+                    <!-- Programming & Linux -->
+                    <div class="skill-card glass-card" data-category="programming">
+                        <div class="skill-card-header">
+                            <i class="fab fa-python skill-icon text-yellow"></i>
+                            <span class="skill-level">Primary Language</span>
+                        </div>
+                        <h3>Python for Data Engineering</h3>
+                        <p>OOP Python, API integrations, data parsing (JSON, CSV, Parquet), automation scripts, and custom ETL modules.</p>
+                        <div class="skill-tags"><span>Python 3</span><span>APIs</span><span>Automation</span></div>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="programming">
+                        <div class="skill-card-header">
+                            <i class="fas fa-terminal skill-icon text-emerald"></i>
+                            <span class="skill-level">Linux Admin</span>
+                        </div>
+                        <h3>Linux Shell & Automation</h3>
+                        <p>Command-line utilities, file handling, cron job scheduling, SSH remote server management (PuTTY, MobaXterm), Bash scripting.</p>
+                        <div class="skill-tags"><span>Cron Jobs</span><span>SSH</span><span>Bash Scripting</span></div>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="programming">
+                        <div class="skill-card-header">
+                            <i class="fab fa-git-alt skill-icon text-rose"></i>
+                            <span class="skill-level">DevOps / CI/CD</span>
+                        </div>
+                        <h3>Git, GitHub & CI/CD</h3>
+                        <p>Version control management, branching strategies, automated workflows with GitHub Actions, and Jenkins fundamentals.</p>
+                        <div class="skill-tags"><span>Git</span><span>GitHub Actions</span><span>Jenkins</span></div>
+                    </div>
+
+                    <!-- Analytics & Visualization -->
+                    <div class="skill-card glass-card" data-category="analytics">
+                        <div class="skill-card-header">
+                            <i class="fas fa-chart-line skill-icon text-amber"></i>
+                            <span class="skill-level">Visualization</span>
+                        </div>
+                        <h3>Power BI & AWS QuickSight</h3>
+                        <p>Creating interactive dashboards, KPIs, business intelligence reporting, and visualizing metrics for decision makers.</p>
+                        <div class="skill-tags"><span>Power BI</span><span>QuickSight</span><span>Dashboards</span></div>
+                    </div>
+
+                    <div class="skill-card glass-card" data-category="analytics">
+                        <div class="skill-card-header">
+                            <i class="fas fa-brain skill-icon text-purple"></i>
+                            <span class="skill-level">AI & Analytics</span>
+                        </div>
+                        <h3>Pandas, Matplotlib & AI Tools</h3>
+                        <p>Exploratory Data Analysis (EDA), NumPy numerical arrays, Seaborn visualizations, LLM APIs (OpenAI), and basic RAG prototypes.</p>
+                        <div class="skill-tags"><span>Pandas</span><span>NumPy</span><span>EDA</span><span>LLM APIs</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">&gt; FEATURED WORK</span>
+                    <h2 class="section-title">Data Engineering Projects</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: YouTube Data Engineering -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-type-badge"><i class="fab fa-aws"></i> AWS Cloud Data Lake</div>
+                            <div class="project-links">
+                                <a href="https://github.com/Saktheesh15/Data-Engineering-youtube-analysis-project" target="_blank" title="View Source Code on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="project-body">
+                            <h3>Data Engineering YouTube Analysis Pipeline</h3>
+                            <p class="project-desc">
+                                End-to-end cloud data pipeline for ingesting, transforming, and analyzing semi-structured YouTube data (CSV/JSON) from multiple global regions into a centralized AWS S3 Data Lake.
+                            </p>
+
+                            <div class="project-features">
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Ingested multi-region YouTube metadata into raw S3 buckets.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Developed scalable <strong>PySpark</strong> ETL jobs for cleaning & schema normalization.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Automated data cataloging using <strong>AWS Glue Crawlers & Data Catalog</strong>.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Executed serverless SQL queries via <strong>AWS Athena</strong> and built <strong>QuickSight dashboards</strong>.</div>
+                            </div>
+
+                            <div class="project-tech-stack">
+                                <span>Python</span>
+                                <span>PySpark</span>
+                                <span>AWS S3</span>
+                                <span>AWS Glue</span>
+                                <span>AWS Athena</span>
+                                <span>AWS Lambda</span>
+                                <span>AWS QuickSight</span>
+                                <span>IAM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Spotify Data Analytics -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-type-badge"><i class="fas fa-chart-bar"></i> Analytics & EDA Engine</div>
+                            <div class="project-links">
+                                <a href="https://github.com/Saktheesh15/spotify_data_analytics" target="_blank" title="View Source Code on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="project-body">
+                            <h3>Spotify Data Analytics & Insights Engine</h3>
+                            <p class="project-desc">
+                                Automated data extraction, transformation, and exploratory data analysis pipeline focusing on Spotify track features, audio metrics, and popularity trends.
+                            </p>
+
+                            <div class="project-features">
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Extracted track metrics using <strong>Spotify REST API</strong> and Python requests.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Conducted EDA on tempo, acousticness, valence, danceability, and track popularity.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Built automated dataset cleaning and transformation routines using <strong>Pandas & NumPy</strong>.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Created correlation heatmap visualizations with <strong>Matplotlib & Seaborn</strong>.</div>
+                            </div>
+
+                            <div class="project-tech-stack">
+                                <span>Python</span>
+                                <span>Spotify API</span>
+                                <span>Pandas</span>
+                                <span>NumPy</span>
+                                <span>Matplotlib</span>
+                                <span>Seaborn</span>
+                                <span>EDA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: AI Placement Training & Analytics -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-type-badge"><i class="fas fa-robot"></i> Analytics Platform</div>
+                            <div class="project-links">
+                                <a href="https://github.com/Saktheesh15/AI_Placement_Training_Support" target="_blank" title="View Source Code on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="project-body">
+                            <h3>AI Placement Training & Analytics Platform</h3>
+                            <p class="project-desc">
+                                AI-powered platform engineered to aggregate student performance metrics, generate automated progress dashboards, and deliver data-driven placement recommendations.
+                            </p>
+
+                            <div class="project-features">
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Structured analytical data storage for tracking user test logs and skill progress.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Integrated AI models for personalized student feedback generation.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Engineered real-time dashboard analytics tracking student readiness metrics.</div>
+                            </div>
+
+                            <div class="project-tech-stack">
+                                <span>Next.js</span>
+                                <span>TypeScript</span>
+                                <span>Firebase Analytics</span>
+                                <span>Tailwind CSS</span>
+                                <span>AI APIs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Pipeline Automation Scripts -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-type-badge"><i class="fas fa-cogs"></i> Automation & Tooling</div>
+                            <div class="project-links">
+                                <a href="https://github.com/Saktheesh15" target="_blank" title="View Saktheesh's GitHub Profile"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="project-body">
+                            <h3>Data Scrapers, Cron Automation & Pipeline Utilities</h3>
+                            <p class="project-desc">
+                                Suite of custom Python scripts, Linux shell automation utilities, and cron jobs for scraping public real estate/web data and syncing structured payloads into SQL stores.
+                            </p>
+
+                            <div class="project-features">
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Automated scraping and structuring of real estate and feedback datasets.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Linux cron scheduling and SSH remote management configuration.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Automated report & dashboard generator scripts.</div>
+                            </div>
+
+                            <div class="project-tech-stack">
+                                <span>Python</span>
+                                <span>Linux Cron</span>
+                                <span>SQL</span>
+                                <span>Bash</span>
+                                <span>Web Scraping</span>
+                                <span>Data Pipelines</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section id="experience" class="section alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">&gt; MY JOURNEY</span>
+                    <h2 class="section-title">Experience & Education</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="experience-timeline">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-badge"><i class="fas fa-chart-line"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jun 2023 - Jul 2023</div>
+                            <h3 class="timeline-role">Data Analytics Specialist Workshop</h3>
+                            <h4 class="timeline-company"><i class="fas fa-building"></i> National Small Industries Corporation (NSIC)</h4>
+                            <ul class="timeline-bullets">
+                                <li>Gained hands-on practical exposure to enterprise data cleaning, SQL query optimization, and statistical data visualization techniques.</li>
+                                <li>Applied analytical formulas and SQL windowing logic to extract insights from raw real-world business datasets.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-badge"><i class="fas fa-laptop-code"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jun 2023 - Aug 2023</div>
+                            <h3 class="timeline-role">Frontend Web Development Intern</h3>
+                            <h4 class="timeline-company"><i class="fas fa-building"></i> Empower Guiding Center</h4>
+                            <ul class="timeline-bullets">
+                                <li>Built and styled responsive web user interfaces using HTML, CSS, JavaScript, Bootstrap, and React.js.</li>
+                                <li>Implemented reusable frontend UI component patterns and optimized layout user experience across mobile and desktop devices.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="timeline-item glass-card education-item">
+                        <div class="timeline-badge"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2021 - 2025</div>
+                            <h3 class="timeline-role">B.E. Computer Science and Engineering</h3>
+                            <h4 class="timeline-company"><i class="fas fa-university"></i> Sri Muthukumaran Institute of Technology</h4>
+                            <div class="education-meta">
+                                <span class="meta-pill"><i class="fas fa-star text-amber"></i> CGPA: <strong>8.1 / 10.0</strong></span>
+                                <span class="meta-pill">HSC: <strong>80%</strong></span>
+                                <span class="meta-pill">SSLC: <strong>65%</strong></span>
+                            </div>
+                            <p class="education-desc">
+                                Specialized in Database Management Systems (DBMS), Operating Systems, Data Structures & Algorithms, Cloud Computing, and Software Engineering principles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Data CLI Section -->
+        <section id="cli" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">&gt; INTERACTIVE TERMINAL</span>
+                    <h2 class="section-title">Data Engineering CLI Simulator</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="terminal-wrapper glass-card">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="terminal-btn close-btn"></span>
+                            <span class="terminal-btn min-btn"></span>
+                            <span class="terminal-btn max-btn"></span>
+                        </div>
+                        <div class="terminal-title">saktheesh@data-lake:~ (bash)</div>
+                        <div class="terminal-status"><span class="pulse-dot"></span> Online</div>
+                    </div>
+
+                    <div class="terminal-quick-cmds">
+                        <span class="quick-cmd-label">Quick Commands:</span>
+                        <button class="cli-cmd-btn" data-cmd="help">help</button>
+                        <button class="cli-cmd-btn" data-cmd="skills">skills</button>
+                        <button class="cli-cmd-btn" data-cmd="projects">projects</button>
+                        <button class="cli-cmd-btn" data-cmd="airflow">airflow status</button>
+                        <button class="cli-cmd-btn" data-cmd="pyspark">pyspark job</button>
+                        <button class="cli-cmd-btn" data-cmd="clear">clear</button>
+                    </div>
+
+                    <div class="terminal-body" id="terminal-body">
+                        <div class="terminal-line welcome-msg">
+                            Welcome to Saktheesh's Interactive Data Engineering CLI [Version 2.5.0].
+                            Type <span class="highlight-cmd">'help'</span> to see available commands or click quick action buttons above.
+                        </div>
+                    </div>
+
+                    <div class="terminal-input-line">
+                        <span class="prompt-user">saktheesh@data-lake:~$</span>
+                        <input type="text" id="terminal-input" placeholder="Type command (e.g., help, skills, projects)..." autocomplete="off" spellcheck="false">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">&gt; GET IN TOUCH</span>
+                    <h2 class="section-title">Let's Build Data Solutions</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-card glass-card">
+                        <h3>Connect & Collaborate</h3>
+                        <p>
+                            I am actively seeking full-time Data Engineering roles, ETL developer positions, and Cloud Analytics opportunities. Reach out via email, phone, or LinkedIn!
+                        </p>
+
+                        <div class="contact-list">
+                            <a href="mailto:saktheeshanbzhagan@gmail.com" class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Direct Email</span>
+                                    <span class="contact-value">saktheeshanbzhagan@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <a href="tel:+919566467921" class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Phone & WhatsApp</span>
+                                    <span class="contact-value">+91 9566467921</span>
+                                </div>
+                            </a>
+
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Location</span>
+                                    <span class="contact-value">Chennai, Tamil Nadu, India</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social-buttons">
+                            <a href="https://github.com/Saktheesh15" target="_blank" class="btn btn-sm btn-secondary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/saktheesh-a-" target="_blank" class="btn btn-sm btn-primary">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-card glass-card">
+                        <form id="contact-form" action="https://formspree.io/f/saktheeshanbzhagan@gmail.com" method="POST">
+                            <h3>Send Message Directly</h3>
+                            <div class="form-group">
+                                <label for="contact-name">Your Name</label>
+                                <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Your Email</label>
+                                <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject">Subject</label>
+                                <input type="text" id="contact-subject" name="subject" placeholder="Data Engineering Opportunity / Collaboration" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" name="message" rows="4" placeholder="Hello Saktheesh, I came across your portfolio and would like to discuss..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block glow-button">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                            <div id="form-status" class="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="#home" class="nav-logo">
+                    <span class="logo-bracket">&lt;</span><span class="logo-name">Saktheesh</span><span class="logo-tag">.data</span><span class="logo-bracket">/&gt;</span>
+                </a>
+                <p>Data Engineer | PySpark, Airflow & AWS Cloud Data Lakes</p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; 2026 Saktheeshwaran A. All rights reserved.</p>
+                <a href="#home" class="back-to-top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Resume Modal -->
+    <div id="cv-modal" class="modal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h2><i class="fas fa-file-pdf text-rose"></i> Saktheesh - Data Engineer Resume</h2>
+                <div class="modal-actions">
+                    <a href="assets/Saktheesh_Data_Engineer_Resume.pdf" download="Saktheesh_Data_Engineer_Resume.pdf" class="btn btn-sm btn-primary">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                    <button id="close-modal-btn" class="close-modal">&times;</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <iframe src="assets/Saktheesh_Data_Engineer_Resume.pdf" width="100%" height="600px" frameborder="0">
+                    <p>Your browser does not support PDF embedding. <a href="assets/Saktheesh_Data_Engineer_Resume.pdf" target="_blank">Click here to open the resume PDF</a>.</p>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
