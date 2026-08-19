@@ -1437,3 +1437,117 @@ h1, h2, h3, h4, h5, h6 {
     .timeline-badge { left: 2px; }
     .footer-content { flex-direction: column; gap: 20px; text-align: center; }
 }
+
+/* --------------------------------------------------------------------------
+   16. CERTIFICATIONS & EXTRA PROJECT STYLING
+   -------------------------------------------------------------------------- */
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 24px;
+}
+
+.cert-card {
+    padding: 28px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.featured-cert {
+    border-color: var(--border-glow);
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.85) 100%);
+}
+
+.cert-icon { font-size: 2.2rem; }
+
+.cert-badge-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.cert-tag {
+    font-size: 0.68rem;
+    font-family: var(--font-mono);
+    padding: 2px 6px;
+    background: var(--primary-cyan);
+    color: #080c14;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.cert-content h3 { font-size: 1.15rem; margin-bottom: 6px; }
+.cert-issuer { font-size: 0.85rem; color: var(--primary-cyan); margin-bottom: 10px; font-weight: 500; }
+.cert-meta { display: flex; flex-direction: column; gap: 4px; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-dim); margin-bottom: 12px; }
+.cert-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Project Tabs & Badges */
+.project-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 36px;
+}
+
+.project-tab {
+    padding: 10px 22px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-glass);
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.project-tab:hover, .project-tab.active {
+    background: var(--grad-primary);
+    color: #080c14;
+    font-weight: 700;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.project-ongoing {
+    border-color: rgba(168, 85, 247, 0.35);
+}
+
+.project-freelance {
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+.badge-pulse {
+    background: rgba(168, 85, 247, 0.15) !important;
+    border-color: rgba(168, 85, 247, 0.4) !important;
+    color: var(--accent-violet) !important;
+}
+
+.badge-freelance {
+    background: rgba(16, 185, 129, 0.15) !important;
+    border-color: rgba(16, 185, 129, 0.4) !important;
+    color: var(--accent-emerald) !important;
+}
+
+.project-status-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+.profile-cert-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: var(--primary-cyan);
+    font-size: 0.78rem;
+    font-family: var(--font-mono);
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    margin-bottom: 10px;
+}

@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initMobileMenu();
     initThemeToggle();
     initSkillFilters();
+    initProjectFilters();
     initCounterAnimation();
     initTerminalCLI();
     initResumeModal();
@@ -23,11 +24,11 @@ function initTypewriter() {
     if (!typewriterEl) return;
 
     const phrases = [
-        "Data Engineer",
-        "ETL & Big Data Pipeline Specialist",
-        "Cloud Data Architect (AWS / GCP / Azure)",
-        "PySpark & Apache Airflow Specialist",
-        "SQL & Data Lake Engineer"
+        "Microsoft Certified Data Engineer",
+        "Azure Databricks & Delta Lake Specialist",
+        "ETL & Cloud Data Architect (AWS / Azure)",
+        "PySpark & Apache Airflow Engineer",
+        "On-Prem to Cloud Migration Specialist"
     ];
 
     let phraseIdx = 0;
@@ -191,7 +192,35 @@ function initSkillFilters() {
 }
 
 /* --------------------------------------------------------------------------
-   6. METRIC COUNTER ANIMATION
+   6. PROJECT CATEGORY FILTERS
+   -------------------------------------------------------------------------- */
+function initProjectFilters() {
+    const ptabs = document.querySelectorAll(".project-tab");
+    const pcards = document.querySelectorAll("#projects-container .project-card");
+
+    if (!ptabs.length || !pcards.length) return;
+
+    ptabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            ptabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            const cat = tab.getAttribute("data-pcat");
+
+            pcards.forEach((card) => {
+                const cardCat = card.getAttribute("data-pcat");
+                if (cat === "all" || cardCat === cat) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    });
+}
+
+/* --------------------------------------------------------------------------
+   7. METRIC COUNTER ANIMATION
    -------------------------------------------------------------------------- */
 function initCounterAnimation() {
     const counters = document.querySelectorAll(".counter");
@@ -230,7 +259,7 @@ function initCounterAnimation() {
 }
 
 /* --------------------------------------------------------------------------
-   7. INTERACTIVE DATA CLI SIMULATOR
+   8. INTERACTIVE DATA CLI SIMULATOR
    -------------------------------------------------------------------------- */
 function initTerminalCLI() {
     const termBody = document.getElementById("terminal-body");
@@ -266,7 +295,7 @@ function initTerminalCLI() {
         // Print input line
         const inputLine = document.createElement("div");
         inputLine.className = "terminal-line";
-        inputLine.innerHTML = `<span class="prompt-user">saktheesh@data-lake:~$</span> <span>${escapeHtml(rawCmd)}</span>`;
+        inputLine.innerHTML = `<span class="prompt-user">saktheesh@databricks:~$</span> <span>${escapeHtml(rawCmd)}</span>`;
         termBody.appendChild(inputLine);
 
         // Command Responses
@@ -276,112 +305,95 @@ function initTerminalCLI() {
             case "help":
                 responseHtml = `
 <div class="cmd-output output-info">Available Commands:</div>
-- <span class="highlight-cmd">skills</span>     : View primary Data Engineering technical stack
-- <span class="highlight-cmd">projects</span>   : Display featured data pipeline projects & repositories
-- <span class="highlight-cmd">airflow</span>    : Check Apache Airflow DAG scheduling status
-- <span class="highlight-cmd">pyspark</span>    : Run PySpark ETL transformation simulation
-- <span class="highlight-cmd">sql</span>        : Show sample analytical window query
-- <span class="highlight-cmd">aws</span>        : List AWS cloud architecture services
-- <span class="highlight-cmd">contact</span>    : Print Saktheesh's contact & social links
-- <span class="highlight-cmd">clear</span>      : Clear CLI terminal screen
+- <span class="highlight-cmd">certs</span>       : Display Microsoft Azure Databricks & Oracle Certifications
+- <span class="highlight-cmd">projects</span>    : List GitHub data pipeline repositories
+- <span class="highlight-cmd">freelance</span>   : View client cloud migration & restaurant analytics projects
+- <span class="highlight-cmd">databricks</span>  : Run Medallion Delta Lake pipeline simulation
+- <span class="highlight-cmd">socials</span>     : Display LinkedIn, GitHub, LeetCode, and Topmate links
+- <span class="highlight-cmd">contact</span>     : Show Saktheesh's phone, email, and location
+- <span class="highlight-cmd">clear</span>       : Clear CLI terminal screen
 `;
                 break;
 
-            case "skills":
+            case "certs":
                 responseHtml = `
 <div class="cmd-output output-success">
-[DATA ENGINEERING TECH STACK]
+[VERIFIED INDUSTRY CERTIFICATIONS]
 ------------------------------------------------
-• Pipelines & Workflow : PySpark, Apache Airflow, ETL/ELT, Cron
-• Cloud Infrastructure : AWS (S3, Glue, Athena, Redshift, Lambda), GCP, Azure
-• Databases & Querying : SQL (Window Functions, CTEs), MySQL, PostgreSQL, MongoDB
-• Scripting & Tools    : Python, Linux Bash, SSH, Git, GitHub Actions
-• Analytics & Viz      : Power BI, AWS QuickSight, Matplotlib, Seaborn, Pandas
+1. Microsoft Certified: Azure Databricks Data Engineer Associate
+   ID: A33FDCA4239653AF | Earned: July 2026
+
+2. Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate
+   ID: 323432310OCI25AICFA | Valid until: Oct 2027
+
+3. IBM SkillsBuild: SQL and Relational Databases 101
+   ID: DBO101EN | Issued: July 2025
+
+4. Besant Technologies: AI & Machine Learning Program
+   ID: BFT415B042 | Issued: Oct 2025
+
+5. Infosys Foundation: Python Web Developer (Grade A+)
+   ID: G-2025-G4352-0018 | Issued: March 2025
 </div>`;
                 break;
 
             case "projects":
                 responseHtml = `
 <div class="cmd-output output-info">
-[FEATURED DATA ENGINEERING REPOSITORIES]
+[DATA ENGINEERING REPOSITORIES & ONGOING WORK]
 ------------------------------------------------
-1. Data Engineering YouTube Analysis (AWS S3, Glue, PySpark, Athena)
-   Repo: github.com/Saktheesh15/Data-Engineering-youtube-analysis-project
+1. Databricks FMCG Data Pipeline (Azure Databricks, Delta Lake, PySpark)
+   github.com/Saktheesh15/databricks-fmcg-data-pipeline.git
 
-2. Spotify Data Analytics & Insights (Python, Spotify API, Pandas, EDA)
-   Repo: github.com/Saktheesh15/spotify_data_analytics
+2. YouTube Cloud Analytics (AWS S3, Glue, PySpark, Athena)
+   github.com/Saktheesh15/Data-Engineering-youtube-analysis-project.git
 
-3. AI Placement Training & Analytics Platform (Next.js, TypeScript, Analytics)
-   Repo: github.com/Saktheesh15/AI_Placement_Training_Support
+3. Spotify Data Analytics (Python, Spotify API, Pandas, EDA)
+   github.com/Saktheesh15/spotify_data_analytics.git
+
+4. [LIVE] Uber Real-Time Telemetry (Spark Streaming, Kafka, Azure)
+5. [LIVE] Zomato AI Analytics (PySpark, AI Models, Power BI)
 </div>`;
                 break;
 
-            case "airflow":
+            case "freelance":
                 responseHtml = `
 <div class="cmd-output output-success">
-[AIRFLOW DAG SCHEDULER STATUS]
+[FREELANCE CLIENT ENGAGEMENTS]
 ------------------------------------------------
-DAG ID                  STATUS     LAST RUN             NEXT RUN
-youtube_etl_pipeline    SUCCESS    2026-08-19 23:00     2026-08-20 00:00
-spotify_analytics_dag   SUCCESS    2026-08-19 18:30     2026-08-20 06:30
-db_sync_cron_job        SUCCESS    2026-08-19 23:30     2026-08-19 23:45
+• On-Premises to Cloud Database Migration:
+  Architected seamless migration of legacy SQL tables to AWS S3 & Azure Blob data lakes.
 
-Total DAGs Active: 3 | Task Retries: 0 | Pipeline Health: 100%
+• Restaurant & Food Chain Sales Data Pipeline:
+  Automated POS sales ingestion, SQL revenue modeling, and Power BI dashboards.
 </div>`;
                 break;
 
-            case "pyspark":
+            case "databricks":
                 responseHtml = `
 <div class="cmd-output output-warning">
-[EXECUTING PYSPARK SPARK-SUBMIT]
+[AZURE DATABRICKS DELTA LAKE PIPELINE EXECUTION]
 ------------------------------------------------
-26/08/19 23:40:12 INFO SparkContext: Running Spark version 3.4.1
-26/08/19 23:40:13 INFO TaskSetManager: Starting task 0.0 in stage 0.0
-26/08/19 23:40:14 INFO Executor: Finished task 0.0 -> Cleaned & Normalized 500,000 JSON records.
-26/08/19 23:40:15 INFO DataLakeWriter: PartitioningParquet by region='US', category_id
-SUCCESS: Written transformed dataset to s3://saktheesh-youtube-analytics-clean/
+26/08/19 23:55:01 INFO DeltaLog: Initializing Delta Lake log for table 'bronze_fmcg_sales'
+26/08/19 23:55:02 INFO PySparkJob: Cleaning schema & deduplicating records -> silver_fmcg_sales
+26/08/19 23:55:04 INFO GoldLayerAggregator: Computing monthly store revenue & inventory turnover
+SUCCESS: Delta table 'gold_fmcg_analytics' updated (COMPACTION DONE).
 </div>`;
                 break;
 
-            case "sql":
-                responseHtml = `
-<div class="cmd-output output-info">
-[SAMPLE ANALYTICAL WINDOW SQL QUERY]
-------------------------------------------------
-SELECT 
-    category_id,
-    video_id,
-    views,
-    RANK() OVER (PARTITION BY category_id ORDER BY views DESC) as rank_in_category,
-    AVG(views) OVER (PARTITION BY category_id) as avg_category_views
-FROM youtube_analytics_athena_db
-WHERE trending_date >= '2026-01-01';
-</div>`;
-                break;
-
-            case "aws":
-                responseHtml = `
-<div class="cmd-output output-success">
-[AWS CLOUD ARCHITECTURE SETUP]
-------------------------------------------------
-• AWS S3     : Data Lake raw and cleaned zone buckets
-• AWS Glue   : Crawlers, Schema Data Catalog & PySpark ETL
-• AWS Athena : Serverless SQL queries on S3 Parquet datasets
-• AWS Lambda : Event-driven S3 file trigger automation
-• AWS IAM    : Strict Role & Security Access Policies
-</div>`;
-                break;
-
+            case "socials":
             case "contact":
                 responseHtml = `
 <div class="cmd-output output-info">
-[CONTACT INFORMATION]
+[CONNECT & REACH OUT TO SAKTHEESH]
 ------------------------------------------------
 • Email    : saktheeshanbzhagan@gmail.com
 • Phone    : +91 9566467921
-• Location : Chennai, Tamil Nadu, India
-• LinkedIn : linkedin.com/in/saktheesh-a-
 • GitHub   : github.com/Saktheesh15
+• LinkedIn : linkedin.com/in/saktheesh-a-
+• LeetCode : (Connect on LeetCode)
+• Topmate  : (Book a 1-on-1 session on Topmate)
+• Location : Chennai, Tamil Nadu, India
 </div>`;
                 break;
 
@@ -414,7 +426,7 @@ Command not recognized: '${escapeHtml(cmd)}'. Type <span class="highlight-cmd">'
 }
 
 /* --------------------------------------------------------------------------
-   8. CV RESUME MODAL HANDLER
+   9. CV RESUME MODAL HANDLER
    -------------------------------------------------------------------------- */
 function initResumeModal() {
     const modal = document.getElementById("cv-modal");
@@ -437,7 +449,7 @@ function initResumeModal() {
 }
 
 /* --------------------------------------------------------------------------
-   9. CONTACT FORM HANDLER
+   10. CONTACT FORM HANDLER
    -------------------------------------------------------------------------- */
 function initContactForm() {
     const form = document.getElementById("contact-form");
@@ -447,6 +459,5 @@ function initContactForm() {
 
     form.addEventListener("submit", (e) => {
         statusDiv.innerHTML = '<span class="text-cyan"><i class="fas fa-spinner fa-spin"></i> Sending message...</span>';
-        // Allow default formspree submission or handle via JS
     });
 }
