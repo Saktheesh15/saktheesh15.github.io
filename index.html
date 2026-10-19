@@ -67,25 +67,61 @@
         </div>
     </nav>
 
-    <!-- Mobile Drawer Menu -->
-    <div class="mobile-menu" id="mobile-menu">
+    <!-- Mobile Drawer Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu" aria-label="Mobile Navigation Menu">
         <div class="mobile-menu-inner">
-            <a href="#home" class="mobile-link"><i class="fas fa-home"></i> Home</a>
-            <a href="#about" class="mobile-link"><i class="fas fa-user"></i> About Me</a>
-            <a href="#certifications" class="mobile-link"><i class="fas fa-certificate"></i> Certifications</a>
-            <a href="#skills" class="mobile-link"><i class="fas fa-cogs"></i> Technical Skills</a>
-            <a href="#projects" class="mobile-link"><i class="fas fa-database"></i> Featured Projects</a>
-            <a href="#experience" class="mobile-link"><i class="fas fa-briefcase"></i> Work Experience</a>
-            <a href="#contact" class="mobile-link"><i class="fas fa-paper-plane"></i> Get In Touch</a>
-            <div class="mobile-actions">
-                <a href="https://topmate.io/saktheesh/" target="_blank" class="btn btn-primary btn-block mb-2">
-                    <svg width="18" height="18" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" fill="#E54638"/><path d="M50 50 L90 28 A40 40 0 1 0 90 72 Z" fill="white"/></svg> Book 1-on-1 on Topmate
-                </a>
-                <a href="assets/Saktheesh_Data_Engineer_Resume.pdf" target="_blank" class="btn btn-secondary btn-block">
-                    <i class="fas fa-download"></i> Download Resume PDF
-                </a>
+            <div>
+                <div class="mobile-menu-header">
+                    <div class="mobile-profile-tag">
+                        <img src="assets/images/profile.jpg" alt="Saktheesh Profile" class="mobile-avatar">
+                        <div class="mobile-profile-text">
+                            <span class="mobile-name">Saktheesh</span>
+                            <span class="mobile-role">Certified Data Engineer</span>
+                        </div>
+                    </div>
+                    <button class="mobile-close-btn" id="mobile-menu-close" aria-label="Close Menu">&times;</button>
+                </div>
+                
+                <nav class="mobile-nav-links">
+                    <a href="#home" class="mobile-link"><i class="fas fa-home"></i> <span>Home</span></a>
+                    <a href="#about" class="mobile-link"><i class="fas fa-user"></i> <span>About Me</span></a>
+                    <a href="#certifications" class="mobile-link"><i class="fas fa-certificate"></i> <span>Certifications</span></a>
+                    <a href="#skills" class="mobile-link"><i class="fas fa-cogs"></i> <span>Technical Skills</span></a>
+                    <a href="#projects" class="mobile-link"><i class="fas fa-database"></i> <span>Featured Projects</span></a>
+                    <a href="#experience" class="mobile-link"><i class="fas fa-briefcase"></i> <span>Work Experience</span></a>
+                    <a href="services.html" class="mobile-link text-cyan"><i class="fas fa-briefcase"></i> <span>Services</span></a>
+                    <a href="#contact" class="mobile-link"><i class="fas fa-paper-plane"></i> <span>Get In Touch</span></a>
+                </nav>
+            </div>
+
+            <div>
+                <div class="mobile-actions">
+                    <button id="mobile-cv-trigger" class="btn btn-primary btn-block">
+                        <i class="fas fa-file-pdf"></i> View & Download Resume
+                    </button>
+                    <a href="https://topmate.io/saktheesh/" target="_blank" class="btn btn-topmate btn-block">
+                        <svg width="18" height="18" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" fill="#E54638"/><path d="M50 50 L90 28 A40 40 0 1 0 90 72 Z" fill="white"/></svg> Book 1-on-1 on Topmate
+                    </a>
+                </div>
+
+                <div class="mobile-menu-footer">
+                    <a href="https://www.linkedin.com/in/saktheesh-a-/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Saktheesh15" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://leetcode.com/u/Saktheesh_A/" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+                    <a href="mailto:saktheeshanbzhagan@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
         </div>
+    </div>
+
+    <!-- Apple-Style Mobile Sticky Section Anchor Bar -->
+    <div class="mobile-section-nav" id="mobile-section-nav">
+        <a href="#about" class="mobile-sec-pill active">About</a>
+        <a href="#certifications" class="mobile-sec-pill">Certs</a>
+        <a href="#skills" class="mobile-sec-pill">Skills</a>
+        <a href="#projects" class="mobile-sec-pill">Projects</a>
+        <a href="#experience" class="mobile-sec-pill">Experience</a>
+        <a href="#contact" class="mobile-sec-pill">Contact</a>
     </div>
 
     <!-- Main Content Container -->
@@ -201,6 +237,32 @@
                 </div>
             </div>
         </section>
+
+        <!-- Infinite Tech Marquee Section -->
+        <div class="marquee-container" aria-hidden="true">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span>AZURE DATABRICKS</span> <span class="marquee-star">✦</span>
+                    <span>PYSPARK & DELTA LAKE</span> <span class="marquee-star">✦</span>
+                    <span>MEDALLION ARCHITECTURE</span> <span class="marquee-star">✦</span>
+                    <span>APACHE AIRFLOW</span> <span class="marquee-star">✦</span>
+                    <span>AWS GLUE & ATHENA</span> <span class="marquee-star">✦</span>
+                    <span>ADVANCED SQL QUERY TUNING</span> <span class="marquee-star">✦</span>
+                    <span>UNITY CATALOG</span> <span class="marquee-star">✦</span>
+                    <span>CLOUD ETL PIPELINES</span> <span class="marquee-star">✦</span>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <span>AZURE DATABRICKS</span> <span class="marquee-star">✦</span>
+                    <span>PYSPARK & DELTA LAKE</span> <span class="marquee-star">✦</span>
+                    <span>MEDALLION ARCHITECTURE</span> <span class="marquee-star">✦</span>
+                    <span>APACHE AIRFLOW</span> <span class="marquee-star">✦</span>
+                    <span>AWS GLUE & ATHENA</span> <span class="marquee-star">✦</span>
+                    <span>ADVANCED SQL QUERY TUNING</span> <span class="marquee-star">✦</span>
+                    <span>UNITY CATALOG</span> <span class="marquee-star">✦</span>
+                    <span>CLOUD ETL PIPELINES</span> <span class="marquee-star">✦</span>
+                </div>
+            </div>
+        </div>
 
         <!-- Project Breakdown Counter Grid (Exact Reference Brand Images) -->
         <section class="project-breakdown-section">
@@ -347,7 +409,7 @@
                 <div class="metric-card glass-card">
                     <div class="metric-icon"><i class="fas fa-briefcase"></i></div>
                     <div class="metric-info">
-                        <h3><span class="counter" data-target="4">0</span></h3>
+                        <h3><span class="counter" data-target="3">0</span></h3>
                         <p>Industry Experience Roles</p>
                     </div>
                 </div>
@@ -383,8 +445,8 @@
                             migrating legacy on-premises databases into cloud data lakes (AWS S3 & Azure Blob), and orchestrating complex multi-stage tasks using <strong>Apache Airflow</strong>.
                         </p>
                         <p>
-                            Additionally, I bring hands-on experience as a <strong>Full Stack Developer at DGI Worx</strong> building production React and Django applications backed by PostgreSQL, 
-                            giving me an end-to-end perspective on how data flows from user interfaces to backend APIs and analytical data warehouses.
+                            Additionally, I bring hands-on experience as a <strong>Backend Developer at Luxmore AI</strong> architecting robust Python backend APIs, scalable SQL databases, Redis caching layers, and cloud infrastructure on AWS, 
+                            giving me an end-to-end perspective on how data flows from backend systems to analytical data engineering pipelines.
                         </p>
 
                         <div class="about-highlights">
@@ -442,7 +504,9 @@
                     <div class="title-underline"></div>
                 </div>
 
-                <div class="certs-grid">
+                <!-- Certifications Grid with Mobile Swipe Hint -->
+                <div class="mobile-swipe-hint"><i class="fas fa-hand-pointer"></i> Swipe to explore certs &rarr;</div>
+                <div class="certifications-grid">
                     <!-- Cert 1: Microsoft Azure Databricks -->
                     <div class="cert-card glass-card featured-cert">
                         <div class="cert-badge-wrapper">
@@ -599,9 +663,9 @@
                             <i class="fas fa-server skill-icon text-indigo"></i>
                             <span class="skill-level">Databases</span>
                         </div>
-                        <h3>PostgreSQL, MySQL & MongoDB</h3>
-                        <p>Relational schema design, document store indexing, transaction management, REST API backend data integration.</p>
-                        <div class="skill-tags"><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span></div>
+                        <h3>PostgreSQL, MySQL & Redis</h3>
+                        <p>Relational schema design, document store indexing, Redis in-memory caching & session management, REST API backend data integration.</p>
+                        <div class="skill-tags"><span>PostgreSQL</span><span>MySQL</span><span>Redis</span><span>MongoDB</span></div>
                     </div>
 
                     <div class="skill-card glass-card" data-category="cloud">
@@ -627,11 +691,11 @@
                     <div class="skill-card glass-card" data-category="programming">
                         <div class="skill-card-header">
                             <i class="fab fa-python skill-icon text-amber"></i>
-                            <span class="skill-level">Primary Language</span>
+                            <span class="skill-level">Backend & Programming</span>
                         </div>
-                        <h3>Python & Web Frameworks</h3>
-                        <p>OOP Python, Pandas, NumPy, Django, Flask, React.js, REST API development and third-party API integration.</p>
-                        <div class="skill-tags"><span>Python</span><span>Django</span><span>Flask</span><span>React.js</span><span>REST APIs</span></div>
+                        <h3>Python & Backend Frameworks</h3>
+                        <p>OOP Python, FastAPI, Django, Flask, Pandas, NumPy, RESTful API architecture, Redis caching, and microservices.</p>
+                        <div class="skill-tags"><span>Python</span><span>FastAPI</span><span>Django</span><span>REST APIs</span><span>Redis</span></div>
                     </div>
 
                     <div class="skill-card glass-card" data-category="analytics">
@@ -675,6 +739,9 @@
                     <button class="project-tab" data-pcat="freelance">Freelance Client Work</button>
                 </div>
 
+                <!-- Mobile Touch Swipe Hint -->
+                <div class="mobile-swipe-hint"><i class="fas fa-hand-pointer"></i> Swipe to explore all projects &rarr;</div>
+
                 <div class="projects-grid" id="projects-container">
                     <!-- Project 1: Databricks FMCG -->
                     <div class="project-card glass-card" data-pcat="de">
@@ -691,11 +758,14 @@
                                 Production-grade FMCG retail lakehouse pipeline built on Databricks consolidating multi-company retail data into AWS S3 using Medallion Architecture (Bronze/Silver/Gold) and Unity Catalog.
                             </p>
 
-                            <div class="project-features">
+                            <div class="project-features mobile-collapsible-list">
                                 <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Implemented Medallion Architecture with Delta Lake ACID compliance and time travel.</div>
                                 <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Modeled Star Schema (fact & dimension tables) for optimized analytical queries.</div>
                                 <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Configured Unity Catalog centralized access control & Databricks Genie Spaces.</div>
                             </div>
+                            <button class="card-accordion-toggle" aria-expanded="false">
+                                <span>Show Details</span> <i class="fas fa-chevron-down"></i>
+                            </button>
 
                             <div class="project-tech-stack">
                                 <span>Databricks</span>
@@ -721,11 +791,14 @@
                                 End-to-end automated data pipeline for food restaurants to track real-time customer orders, daily sales revenue, customer ratings, menu performance, and inventory churn analytics.
                             </p>
 
-                            <div class="project-features">
+                            <div class="project-features mobile-collapsible-list">
                                 <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Automated ingestion of daily POS sales receipts and online customer order streams.</div>
                                 <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Built SQL analytical models evaluating item-wise profit margins and customer rating trends.</div>
                                 <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Deployed interactive Power BI reporting dashboards for store owners.</div>
                             </div>
+                            <button class="card-accordion-toggle" aria-expanded="false">
+                                <span>Show Details</span> <i class="fas fa-chevron-down"></i>
+                            </button>
 
                             <div class="project-tech-stack">
                                 <span>Python</span>
@@ -966,37 +1039,27 @@
                 </div>
 
                 <div class="experience-timeline">
-                    <!-- Role 1: DGI Worx -->
+                    <!-- Role 1: Luxmore AI -->
                     <div class="timeline-item glass-card">
-                        <div class="timeline-badge"><i class="fas fa-laptop-code text-cyan"></i></div>
+                        <div class="timeline-badge"><i class="fas fa-server text-cyan"></i></div>
                         <div class="timeline-content">
-                            <div class="timeline-date">Jun 2026 – Present | Chennai</div>
-                            <h3 class="timeline-role">Full Stack Developer</h3>
-                            <h4 class="timeline-company"><i class="fas fa-building"></i> DGI Worx</h4>
-                            <ul class="timeline-bullets">
-                                <li>Joined DGI Worx as a Full Stack Developer contributing to a live production codebase built on React and Django. Contributed frontend components and backend REST endpoints backed by PostgreSQL within the first few weeks.</li>
-                                <li>Adopted feature-branching, pull-request practices, and rigorous code reviews in a shared Git workflow to safely merge changes into production without breaking functionality.</li>
-                                <li>Took full ownership from requirement clarification through implementation and testing for production features delivered without rework.</li>
+                            <div class="timeline-date">Aug 2025 – Sep 2026 | Chennai</div>
+                            <h3 class="timeline-role">Backend Developer</h3>
+                            <h4 class="timeline-company"><i class="fas fa-building"></i> Luxmore AI</h4>
+                            <ul class="timeline-bullets mobile-collapsible-list">
+                                <li>Engineered and deployed resilient, asynchronous RESTful APIs and backend microservices using <strong>Python (FastAPI & Django)</strong>, architecting modular business logic and handling high-concurrency client workloads.</li>
+                                <li>Designed and optimized relational database schemas in <strong>SQL (PostgreSQL & MySQL)</strong>, authoring complex queries, indexing strategies, and stored procedures to accelerate query performance by over 40%.</li>
+                                <li>Implemented <strong>Redis</strong> for distributed caching, session state management, and pub/sub message brokering, drastically reducing database latency and boosting endpoint throughput.</li>
+                                <li>Provisioned, containerized, and managed cloud infrastructure across <strong>AWS services (EC2, S3, RDS, Lambda, CloudWatch)</strong> with Docker and automated CI/CD deployment pipelines.</li>
+                                <li>Developed robust <strong>ETL / ELT data engineering pipelines</strong> and background workers to ingest, clean, and synchronize transactional data between backend operational databases and analytical data warehouses.</li>
                             </ul>
+                            <button class="card-accordion-toggle" aria-expanded="false">
+                                <span>View Responsibilities</span> <i class="fas fa-chevron-down"></i>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Role 2: Manovate Technologies -->
-                    <div class="timeline-item glass-card">
-                        <div class="timeline-badge"><i class="fab fa-python text-amber"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Oct 2025 – Apr 2026 | Chennai</div>
-                            <h3 class="timeline-role">Python Full Stack Developer Intern</h3>
-                            <h4 class="timeline-company"><i class="fas fa-building"></i> Manovate Technologies</h4>
-                            <ul class="timeline-bullets">
-                                <li>Built production-ready Python web applications (Django, Flask), REST APIs, and optimized MySQL/PostgreSQL relational database schemas.</li>
-                                <li>Automated raw dataset transformations and data validation routines using Python & Pandas scripts, significantly reducing manual data handling.</li>
-                                <li>Working within an Agile team structure, actively participated in daily standups, sprint planning, and retrospectives while maintaining clear technical documentation.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Role 3: NSIC -->
+                    <!-- Role 2: NSIC -->
                     <div class="timeline-item glass-card">
                         <div class="timeline-badge"><i class="fas fa-chart-line text-amber"></i></div>
                         <div class="timeline-content">
@@ -1010,7 +1073,7 @@
                         </div>
                     </div>
 
-                    <!-- Role 4: Empower Guiding Center -->
+                    <!-- Role 3: Empower Guiding Center -->
                     <div class="timeline-item glass-card">
                         <div class="timeline-badge"><i class="fas fa-code text-rose"></i></div>
                         <div class="timeline-content">

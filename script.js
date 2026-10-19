@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     initResumeModal();
     initContactForm();
     initCopyEmail();
+    initMobileAccordions();
+    initMobileSectionNav();
 });
 
 /* --------------------------------------------------------------------------
@@ -33,7 +35,7 @@ function initTypewriter() {
     let phraseIdx = 0;
     let charIdx = 0;
     let isDeleting = false;
-    let typeSpeed = 80;
+    let typeSpeed = 45;
 
     function type() {
         const currentPhrase = phrases[phraseIdx];
@@ -41,20 +43,20 @@ function initTypewriter() {
         if (isDeleting) {
             typewriterEl.textContent = currentPhrase.substring(0, charIdx - 1);
             charIdx--;
-            typeSpeed = 35;
+            typeSpeed = 20;
         } else {
             typewriterEl.textContent = currentPhrase.substring(0, charIdx + 1);
             charIdx++;
-            typeSpeed = 85;
+            typeSpeed = 45;
         }
 
         if (!isDeleting && charIdx === currentPhrase.length) {
-            typeSpeed = 2200; // Pause at end of phrase
+            typeSpeed = 1300; // Snappy pause at end of phrase
             isDeleting = true;
         } else if (isDeleting && charIdx === 0) {
             isDeleting = false;
             phraseIdx = (phraseIdx + 1) % phrases.length;
-            typeSpeed = 400;
+            typeSpeed = 250;
         }
 
         setTimeout(type, typeSpeed);
@@ -102,18 +104,43 @@ function initNavbarScroll() {
 function initMobileMenu() {
     const hamburger = document.getElementById("hamburger");
     const mobileMenu = document.getElementById("mobile-menu");
+    const closeBtn = document.getElementById("mobile-menu-close");
     const mobileLinks = document.querySelectorAll(".mobile-link");
 
     if (!hamburger || !mobileMenu) return;
 
-    hamburger.addEventListener("click", () => {
-        mobileMenu.classList.toggle("open");
+    function toggleMenu(show) {
+        const isOpen = show !== undefined ? show : !mobileMenu.classList.contains("open");
+        if (isOpen) {
+            mobileMenu.classList.add("open");
+            document.body.style.overflow = "hidden";
+        } else {
+            mobileMenu.classList.remove("open");
+            document.body.style.overflow = "";
+        }
+    }
+
+    hamburger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleMenu();
     });
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+            toggleMenu(false);
+        });
+    }
 
     mobileLinks.forEach((link) => {
         link.addEventListener("click", () => {
-            mobileMenu.classList.remove("open");
+            toggleMenu(false);
         });
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileMenu.classList.contains("open")) {
+            toggleMenu(false);
+        }
     });
 }
 
@@ -260,15 +287,24 @@ function initResumeModal() {
     const modal = document.getElementById("cv-modal");
     const triggerBtn = document.getElementById("cv-modal-trigger");
     const heroBtn = document.getElementById("hero-resume-btn");
+    const mobileCvBtn = document.getElementById("mobile-cv-trigger");
     const closeBtn = document.getElementById("close-modal-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
 
     if (!modal) return;
 
-    const openModal = () => modal.classList.add("active");
+    const openModal = () => {
+        modal.classList.add("active");
+        if (mobileMenu && mobileMenu.classList.contains("open")) {
+            mobileMenu.classList.remove("open");
+            document.body.style.overflow = "";
+        }
+    };
     const closeModal = () => modal.classList.remove("active");
 
     if (triggerBtn) triggerBtn.addEventListener("click", openModal);
     if (heroBtn) heroBtn.addEventListener("click", openModal);
+    if (mobileCvBtn) mobileCvBtn.addEventListener("click", openModal);
     if (closeBtn) closeBtn.addEventListener("click", closeModal);
 
     window.addEventListener("click", (e) => {
@@ -334,12 +370,69 @@ function showToast(msg) {
     toast.innerHTML = `<i class="fas fa-info-circle text-cyan"></i> <span>${msg}</span>`;
     container.appendChild(toast);
 
-    setTimeout(() => {
-        toast.classList.add("show");
-    }, 10);
-
+    setTimeout(() => toast.classList.add("show"), 10);
     setTimeout(() => {
         toast.classList.remove("show");
         setTimeout(() => toast.remove(), 300);
-    }, 3500);
+    }, 3200);
+}
+
+/* --------------------------------------------------------------------------
+   12. MOBILE CARD ACCORDION TOGGLE HANDLER
+   -------------------------------------------------------------------------- */
+function initMobileAccordions() {
+    const toggles = document.querySelectorAll(".card-accordion-toggle");
+
+    toggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+            const cardBody = toggle.closest(".project-body") || toggle.closest(".timeline-content") || toggle.parentElement;
+            const collapsibleList = cardBody.querySelector(".mobile-collapsible-list");
+
+            if (collapsibleList) {
+                const isExpanded = collapsibleList.classList.contains("expanded");
+
+                if (isExpanded) {
+                    collapsibleList.classList.remove("expanded");
+                    toggle.classList.remove("active");
+                    toggle.setAttribute("aria-expanded", "false");
+                    toggle.querySelector("span").textContent = toggle.dataset.collapsedText || "Show Details";
+                } else {
+                    collapsibleList.classList.add("expanded");
+                    toggle.classList.add("active");
+                    toggle.setAttribute("aria-expanded", "true");
+                    toggle.querySelector("span").textContent = toggle.dataset.expandedText || "Hide Details";
+                }
+            }
+        });
+    });
+}
+
+/* --------------------------------------------------------------------------
+   13. APPLE-STYLE MOBILE STICKY SECTION NAV SPY
+   -------------------------------------------------------------------------- */
+function initMobileSectionNav() {
+    const pills = document.querySelectorAll(".mobile-sec-pill");
+    const sections = document.querySelectorAll("section[id]");
+
+    if (!pills.length || !sections.length) return;
+
+    window.addEventListener("scroll", () => {
+        let currentId = "";
+        sections.forEach((sec) => {
+            const top = sec.offsetTop - 140;
+            const height = sec.offsetHeight;
+            if (window.scrollY >= top && window.scrollY < top + height) {
+                currentId = sec.getAttribute("id");
+            }
+        });
+
+        if (currentId) {
+            pills.forEach((pill) => {
+                pill.classList.remove("active");
+                if (pill.getAttribute("href") === `#${currentId}`) {
+                    pill.classList.add("active");
+                }
+            });
+        }
+    });
 }

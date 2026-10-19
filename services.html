@@ -121,10 +121,21 @@ section{padding:80px 0}
 .cta p{color:var(--muted);max-width:600px;margin:0 auto 28px;font-size:17px}
 footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
 .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.arch-scroll-wrapper{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:rgba(255,255,255,0.05);border:1px solid var(--line);cursor:pointer;padding:8px 12px;border-radius:8px}
+.hamburger span{width:22px;height:2px;background-color:#fff;border-radius:2px}
+.mobile-menu{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(6,9,19,0.96);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);padding:24px 20px;display:none;z-index:2000;overflow-y:auto}
+.mobile-menu.open{display:flex;flex-direction:column;justify-content:space-between}
+.mobile-menu-inner{display:flex;flex-direction:column;height:100%;max-width:480px;margin:0 auto;width:100%;justify-content:space-between}
+.mobile-menu-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:20px}
+.mobile-close-btn{background:rgba(255,255,255,0.08);border:1px solid var(--line);color:#fff;font-size:1.6rem;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.mobile-link{color:#fff;padding:12px 16px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:10px}
 @media(max-width:800px){
   .nav-links{display:none}.hero{padding-top:60px}
+  .nav-cta-btn{display:none !important}
+  .hamburger{display:flex}
   .hero-grid,.problem-grid,.service-grid,.use-grid,.outcomes{grid-template-columns:1fr}
-  .flow{min-width:680px}
+  .flow{min-width:620px}
 }
 </style>
 </head>
@@ -140,9 +151,36 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
       <a href="#technology">Stack</a>
       <a href="#contact">Contact</a>
     </div>
-    <a class="btn btn-primary" href="#contact"><i class="fas fa-comments"></i> Book Freelance Session</a>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <a class="btn btn-primary nav-cta-btn" href="#contact"><i class="fas fa-comments"></i> Book Freelance Session</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-inner">
+    <div>
+      <div class="mobile-menu-header">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <strong style="font-size:1.1rem;color:#fff;">Saktheesh .services</strong>
+        </div>
+        <button class="mobile-close-btn" id="mobile-menu-close" aria-label="Close Menu">&times;</button>
+      </div>
+      <a href="index.html" class="mobile-link"><i class="fas fa-user-circle"></i> Main Portfolio</a>
+      <a href="#services" class="mobile-link"><i class="fas fa-cogs"></i> Services</a>
+      <a href="#architecture" class="mobile-link"><i class="fas fa-sitemap"></i> Architecture</a>
+      <a href="#technology" class="mobile-link"><i class="fas fa-layer-group"></i> Stack</a>
+      <a href="#contact" class="mobile-link"><i class="fas fa-paper-plane"></i> Contact</a>
+    </div>
+    <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+      <a href="#contact" class="btn btn-primary" style="width:100%;text-align:center;">Book Freelance Session</a>
+      <a href="https://topmate.io/saktheesh/" target="_blank" class="btn btn-ghost" style="width:100%;text-align:center;">Book 1-on-1 on Topmate</a>
+    </div>
+  </div>
+</div>
 
 <header class="hero">
   <div class="container">
@@ -206,16 +244,18 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
       <p>Connecting your existing systems, engineering the pipeline, and creating a lakehouse platform your team can trust.</p>
     </div>
     <div class="arch">
-      <div class="flow">
-        <div class="node">Sources<small>Databases • SaaS • APIs</small></div>
-        <div class="arrow">→</div>
-        <div class="node">Ingestion<small>PySpark • Airflow • Glue</small></div>
-        <div class="arrow">→</div>
-        <div class="node">Processing<small>Bronze → Silver → Gold</small></div>
-        <div class="arrow">→</div>
-        <div class="node">Lakehouse<small>Databricks • Delta Lake</small></div>
-        <div class="arrow">→</div>
-        <div class="node">Outcomes<small>Power BI • AI • Reports</small></div>
+      <div class="arch-scroll-wrapper">
+        <div class="flow">
+          <div class="node">Sources<small>Databases • SaaS • APIs</small></div>
+          <div class="arrow">→</div>
+          <div class="node">Ingestion<small>PySpark • Airflow • Glue</small></div>
+          <div class="arrow">→</div>
+          <div class="node">Processing<small>Bronze → Silver → Gold</small></div>
+          <div class="arrow">→</div>
+          <div class="node">Lakehouse<small>Databricks • Delta Lake</small></div>
+          <div class="arrow">→</div>
+          <div class="node">Outcomes<small>Power BI • AI • Reports</small></div>
+        </div>
       </div>
     </div>
   </div>
@@ -316,5 +356,6 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
