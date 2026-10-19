@@ -409,14 +409,14 @@
                 <div class="metric-card glass-card">
                     <div class="metric-icon"><i class="fas fa-briefcase"></i></div>
                     <div class="metric-info">
-                        <h3><span class="counter" data-target="3">0</span></h3>
-                        <p>Industry Experience Roles</p>
+                        <h3><span class="counter" data-target="1">0</span> Year</h3>
+                        <p>Professional Experience</p>
                     </div>
                 </div>
                 <div class="metric-card glass-card">
                     <div class="metric-icon"><i class="fas fa-graduation-cap"></i></div>
                     <div class="metric-info">
-                        <h3><span class="counter" data-target="8">0</span>.<span class="counter" data-target="1">0</span></h3>
+                        <h3><span class="counter" data-target="7">0</span>.<span class="counter" data-target="9">0</span></h3>
                         <p>B.E. Computer Science CGPA</p>
                     </div>
                 </div>
@@ -445,8 +445,7 @@
                             migrating legacy on-premises databases into cloud data lakes (AWS S3 & Azure Blob), and orchestrating complex multi-stage tasks using <strong>Apache Airflow</strong>.
                         </p>
                         <p>
-                            Additionally, I bring hands-on experience as a <strong>Backend Developer at Luxmore AI</strong> architecting robust Python backend APIs, scalable SQL databases, Redis caching layers, and cloud infrastructure on AWS, 
-                            giving me an end-to-end perspective on how data flows from backend systems to analytical data engineering pipelines.
+                            Additionally, I bring professional experience as a <strong>Backend Developer (Data and APIs) at Luxmor AI Technologies Pvt Ltd</strong> delivering MVP Python backends with REST APIs, designing and tuning PostgreSQL & MySQL schemas, automating data cleaning routines with SQL & Python, and managing reliable cloud infrastructure on AWS.
                         </p>
 
                         <div class="about-highlights">
@@ -905,31 +904,70 @@
                         </div>
                     </div>
 
-                    <!-- Project 6: Zomato AI Data Analytics (Ongoing) -->
-                    <div class="project-card glass-card project-ongoing" data-pcat="ai">
+                    <!-- Project 6: Zomato AI Data Engineering Project (In Progress) -->
+                    <div class="project-card glass-card project-ongoing" data-pcat="de">
                         <div class="project-header">
-                            <div class="project-type-badge badge-pulse"><i class="fas fa-brain text-amber"></i> Ongoing Live Project</div>
-                            <div class="project-status-tag">AI Data Engineering</div>
+                            <div class="project-type-badge badge-pulse"><i class="fas fa-brain text-amber"></i> In Progress (Resume Project)</div>
+                            <div class="project-status-tag">AWS, Snowflake & dbt</div>
                         </div>
 
                         <div class="project-body">
-                            <h3>Zomato AI Data Analytics & Engineering Pipeline</h3>
+                            <h3>Zomato AI Data Engineering Project</h3>
                             <p class="project-desc">
-                                End-to-end AI-driven data engineering platform processing food delivery orders, restaurant ratings, pricing trends, and customer sentiment analytics.
+                                End-to-end data pipeline on a large-scale food delivery order dataset loading raw data from AWS S3 into a Snowflake data warehouse with dbt transformations and OpenAI LLM intelligence.
                             </p>
 
-                            <div class="project-features">
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Automated ETL extraction of restaurant order logs and customer review datasets.</div>
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> AI sentiment classification on customer reviews using <strong>LLM APIs</strong>.</div>
-                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> SQL analytical aggregations tracking order delivery SLA and peak sales hours.</div>
+                            <div class="project-features mobile-collapsible-list">
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Developing dbt models across Bronze, Silver and Gold layers (facts, dimensions and data marts) with automated data quality tests, documentation and lineage.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Orchestrating the pipeline with Apache Airflow DAGs, including the full AI workflow.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Adding an AI layer with LLMs: review enrichment, a RAG chatbot over customer reviews, and text-to-SQL over the warehouse.</div>
                             </div>
+                            <button class="card-accordion-toggle" aria-expanded="false">
+                                <span>Show Details</span> <i class="fas fa-chevron-down"></i>
+                            </button>
 
                             <div class="project-tech-stack">
-                                <span>Python</span>
-                                <span>PySpark</span>
-                                <span>AI / LLM APIs</span>
-                                <span>PostgreSQL</span>
-                                <span>Power BI</span>
+                                <span>AWS S3</span>
+                                <span>Snowflake</span>
+                                <span>dbt</span>
+                                <span>Apache Airflow</span>
+                                <span>OpenAI LLMs</span>
+                                <span>RAG</span>
+                                <span>Text-to-SQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project: Walmart Data Engineering Project (In Progress) -->
+                    <div class="project-card glass-card project-ongoing" data-pcat="de">
+                        <div class="project-header">
+                            <div class="project-type-badge badge-pulse"><i class="fas fa-shopping-cart text-amber"></i> In Progress (Resume Project)</div>
+                            <div class="project-status-tag">Databricks & dbt</div>
+                        </div>
+
+                        <div class="project-body">
+                            <h3>Walmart Data Engineering Project</h3>
+                            <p class="project-desc">
+                                End-to-end retail pipeline on Walmart data, ingesting from an OLTP source and AWS S3 into a Databricks lakehouse with incremental ingestion, dbt modeling, and Airflow orchestration.
+                            </p>
+
+                            <div class="project-features mobile-collapsible-list">
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Developing dbt models for Silver technical and business layers, with incremental models, snapshots for slowly changing dimensions, and automated dbt tests for data quality.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Designing a metadata-driven ingestion pipeline and a star schema, orchestrated with Airflow DAGs (run in Docker) that trigger dbt and Databricks jobs.</div>
+                                <div class="feature-line"><i class="fas fa-caret-right text-cyan"></i> Preparing sales dashboards for KPIs such as weekly sales, store and department performance.</div>
+                            </div>
+                            <button class="card-accordion-toggle" aria-expanded="false">
+                                <span>Show Details</span> <i class="fas fa-chevron-down"></i>
+                            </button>
+
+                            <div class="project-tech-stack">
+                                <span>Databricks</span>
+                                <span>Apache Airflow</span>
+                                <span>dbt</span>
+                                <span>AWS S3</span>
+                                <span>Delta Lake</span>
+                                <span>Docker</span>
+                                <span>Star Schema</span>
                             </div>
                         </div>
                     </div>
@@ -1039,50 +1077,24 @@
                 </div>
 
                 <div class="experience-timeline">
-                    <!-- Role 1: Luxmore AI -->
+                    <!-- Role: Luxmor AI Technologies Pvt Ltd -->
                     <div class="timeline-item glass-card">
                         <div class="timeline-badge"><i class="fas fa-server text-cyan"></i></div>
                         <div class="timeline-content">
                             <div class="timeline-date">Aug 2025 – Sep 2026 | Chennai</div>
-                            <h3 class="timeline-role">Backend Developer</h3>
-                            <h4 class="timeline-company"><i class="fas fa-building"></i> Luxmore AI</h4>
+                            <h3 class="timeline-role">Backend Developer (Data and APIs)</h3>
+                            <h4 class="timeline-company"><i class="fas fa-building"></i> Luxmor AI Technologies Pvt Ltd</h4>
                             <ul class="timeline-bullets mobile-collapsible-list">
-                                <li>Engineered and deployed resilient, asynchronous RESTful APIs and backend microservices using <strong>Python (FastAPI & Django)</strong>, architecting modular business logic and handling high-concurrency client workloads.</li>
-                                <li>Designed and optimized relational database schemas in <strong>SQL (PostgreSQL & MySQL)</strong>, authoring complex queries, indexing strategies, and stored procedures to accelerate query performance by over 40%.</li>
-                                <li>Implemented <strong>Redis</strong> for distributed caching, session state management, and pub/sub message brokering, drastically reducing database latency and boosting endpoint throughput.</li>
-                                <li>Provisioned, containerized, and managed cloud infrastructure across <strong>AWS services (EC2, S3, RDS, Lambda, CloudWatch)</strong> with Docker and automated CI/CD deployment pipelines.</li>
-                                <li>Developed robust <strong>ETL / ELT data engineering pipelines</strong> and background workers to ingest, clean, and synchronize transactional data between backend operational databases and analytical data warehouses.</li>
+                                <li>Delivered an MVP backend in Python with REST APIs and designed PostgreSQL and MySQL schemas, tuning queries for faster, stable performance.</li>
+                                <li>Automated data cleaning, transformation, validation and reporting with Python and SQL, cutting manual data handling and improving dataset accuracy.</li>
+                                <li>Deployed and supported the application on AWS (S3, EC2, RDS), keeping the production environment reliable.</li>
+                                <li>Resolved permission and service issues on Linux servers over SSH, speeding up fixes and keeping releases stable.</li>
+                                <li>Built CI/CD pipelines with Git and GitHub Actions, automating build, test and deployment to shorten release cycles.</li>
+                                <li>Contributed to code reviews, sprint planning and technical documentation for cross-functional teams.</li>
                             </ul>
                             <button class="card-accordion-toggle" aria-expanded="false">
                                 <span>View Responsibilities</span> <i class="fas fa-chevron-down"></i>
                             </button>
-                        </div>
-                    </div>
-
-                    <!-- Role 2: NSIC -->
-                    <div class="timeline-item glass-card">
-                        <div class="timeline-badge"><i class="fas fa-chart-line text-amber"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2024 | Chennai</div>
-                            <h3 class="timeline-role">Data Analytics Workshop</h3>
-                            <h4 class="timeline-company"><i class="fas fa-building"></i> National Small Industries Corporation (NSIC)</h4>
-                            <ul class="timeline-bullets">
-                                <li>Given real-world raw datasets to analyze, applied Python and SQL for end-to-end cleaning, transformation, and statistical analysis.</li>
-                                <li>Delivered structured analytical reports and visualizations that clearly communicated findings to stakeholders.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Role 3: Empower Guiding Center -->
-                    <div class="timeline-item glass-card">
-                        <div class="timeline-badge"><i class="fas fa-code text-rose"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2023 | Chennai</div>
-                            <h3 class="timeline-role">Frontend Web Development Intern</h3>
-                            <h4 class="timeline-company"><i class="fas fa-building"></i> Empower Guiding Center</h4>
-                            <ul class="timeline-bullets">
-                                <li>Built responsive web interfaces using HTML, CSS, JavaScript, and Bootstrap while collaborating with stakeholders, resulting in reusable components delivered on time.</li>
-                            </ul>
                         </div>
                     </div>
 
@@ -1094,7 +1106,9 @@
                             <h3 class="timeline-role">B.E. Computer Science and Engineering</h3>
                             <h4 class="timeline-company"><i class="fas fa-university"></i> Sri Muthukumaran Institute of Technology, Chennai</h4>
                             <div class="education-meta">
-                                <span class="meta-pill"><i class="fas fa-star text-amber"></i> CGPA: <strong>8.1 / 10.0</strong></span>
+                                <span class="meta-pill"><i class="fas fa-star text-amber"></i> CGPA: <strong>7.9 / 10</strong></span>
+                                <span class="meta-pill"><i class="fas fa-award text-cyan"></i> HSC: <strong>80%</strong></span>
+                                <span class="meta-pill"><i class="fas fa-certificate text-purple"></i> SSLC: <strong>65%</strong></span>
                             </div>
                             <p class="education-desc">
                                 Specialized in Database Management Systems (DBMS), Operating Systems, Data Structures & Algorithms, Cloud Computing, and Software Engineering principles.
@@ -1232,15 +1246,15 @@
             <div class="modal-header">
                 <h2><i class="fas fa-file-pdf text-rose"></i> Saktheesh - Data Engineer Resume</h2>
                 <div class="modal-actions">
-                    <a href="assets/Saktheesh_Data_Engineer_Resume.pdf?t=202608200128" download="Saktheesh_Data_Engineer_Resume.pdf" class="btn btn-sm btn-primary">
+                    <a href="assets/Saktheesh_Data_Engineer_Resume.pdf?t=20261019" download="Saktheesh_Data_Engineer_Resume.pdf" class="btn btn-sm btn-primary">
                         <i class="fas fa-download"></i> Download PDF
                     </a>
                     <button id="close-modal-btn" class="close-modal">&times;</button>
                 </div>
             </div>
             <div class="modal-body">
-                <iframe id="resume-iframe" src="assets/Saktheesh_Data_Engineer_Resume.pdf?t=202608200128" width="100%" height="600px" frameborder="0">
-                    <p>Your browser does not support PDF embedding. <a href="assets/Saktheesh_Data_Engineer_Resume.pdf?t=202608200128" target="_blank">Click here to open the resume PDF</a>.</p>
+                <iframe id="resume-iframe" src="assets/Saktheesh_Data_Engineer_Resume.pdf?t=20261019" width="100%" height="600px" frameborder="0">
+                    <p>Your browser does not support PDF embedding. <a href="assets/Saktheesh_Data_Engineer_Resume.pdf?t=20261019" target="_blank">Click here to open the resume PDF</a>.</p>
                 </iframe>
             </div>
         </div>
