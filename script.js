@@ -294,6 +294,10 @@ function initResumeModal() {
     if (!modal) return;
 
     const openModal = () => {
+        const iframe = document.getElementById("resume-iframe");
+        if (iframe) {
+            iframe.src = "assets/Saktheeswaran_A_Resume.pdf?v=" + Date.now();
+        }
         modal.classList.add("active");
         if (mobileMenu && mobileMenu.classList.contains("open")) {
             mobileMenu.classList.remove("open");
