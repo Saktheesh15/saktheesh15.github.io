@@ -29,6 +29,14 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Anti-Flash Theme Initializer -->
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
     <!-- Background Grid Mesh -->
@@ -55,6 +63,9 @@
             </div>
 
             <div class="nav-actions">
+                <button id="theme-toggle" class="btn-theme-toggle" title="Toggle Light / Dark Mode" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
                 <button id="cv-modal-trigger" class="btn btn-sm btn-outline-glow">
                     <i class="fas fa-file-pdf"></i> <span>Resume</span>
                 </button>
@@ -96,6 +107,9 @@
 
             <div>
                 <div class="mobile-actions">
+                    <button id="mobile-theme-toggle" class="btn btn-secondary btn-block">
+                        <i class="fas fa-moon"></i> <span>Switch Theme</span>
+                    </button>
                     <button id="mobile-cv-trigger" class="btn btn-primary btn-block">
                         <i class="fas fa-file-pdf"></i> View & Download Resume
                     </button>

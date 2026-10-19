@@ -9,50 +9,103 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+  (function() {
+    var theme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
 <style>
-:root{
-  --bg:#060913;
-  --panel:rgba(11, 16, 29, 0.7);
-  --panel2:#0d1527;
-  --text:#f3f4f6;
-  --muted:#94a3b8;
-  --line:rgba(255,255,255,0.08);
-  --accent:#06b6d4;
-  --accent2:#3b82f6;
-  --max:1200px;
+:root, [data-theme="light"] {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --panel2: #f1f5f9;
+  --text: #0f172a;
+  --muted: #475569;
+  --line: rgba(226, 232, 240, 0.95);
+  --accent: #0284c7;
+  --accent2: #2563eb;
+  --max: 1200px;
+  --nav-bg: rgba(255, 255, 255, 0.94);
+  --services-bg: #f8fafc;
+  --arch-bg: #ffffff;
+  --node-bg: #f1f5f9;
+  --cta-bg: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  --tech-bg: #ffffff;
+  --stat-bg: #ffffff;
+  --btn-primary-bg: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  --btn-primary-text: #ffffff;
+  --btn-ghost-bg: #ffffff;
+  --btn-ghost-text: #0f172a;
+  --mobile-menu-bg: rgba(255, 255, 255, 0.98);
+  --card-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.06);
 }
+
+[data-theme="dark"] {
+  --bg: #060913;
+  --panel: rgba(11, 16, 29, 0.7);
+  --panel2: #0d1527;
+  --text: #f3f4f6;
+  --muted: #94a3b8;
+  --line: rgba(255, 255, 255, 0.08);
+  --accent: #06b6d4;
+  --accent2: #3b82f6;
+  --max: 1200px;
+  --nav-bg: rgba(6, 9, 19, 0.85);
+  --services-bg: #0a0e1a;
+  --arch-bg: linear-gradient(135deg, #0c1322, #070b14);
+  --node-bg: rgba(255, 255, 255, 0.04);
+  --cta-bg: radial-gradient(circle at 20% 0%, rgba(6, 182, 212, 0.15), transparent 40%), radial-gradient(circle at 80% 100%, rgba(59, 130, 246, 0.15), transparent 40%), var(--panel);
+  --tech-bg: var(--panel);
+  --stat-bg: rgba(255, 255, 255, 0.03);
+  --btn-primary-bg: var(--accent);
+  --btn-primary-text: #060913;
+  --btn-ghost-bg: rgba(255, 255, 255, 0.04);
+  --btn-ghost-text: #ffffff;
+  --mobile-menu-bg: rgba(6, 9, 19, 0.96);
+  --card-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;background:var(--bg);color:var(--text);
   font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   line-height:1.6;
+  transition:background 0.3s ease, color 0.3s ease;
 }
 a{color:inherit;text-decoration:none}
 .container{width:min(var(--max),calc(100% - 40px));margin:auto}
 nav{
   position:sticky;top:0;z-index:20;
   backdrop-filter:blur(16px);
-  background:rgba(6,9,19,0.85);border-bottom:1px solid var(--line)
+  background:var(--nav-bg);border-bottom:1px solid var(--line);
+  transition:background 0.3s ease;
 }
 .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Outfit',sans-serif;font-weight:800;letter-spacing:-.03em;font-size:22px}
+.logo{font-family:'Outfit',sans-serif;font-weight:800;letter-spacing:-.03em;font-size:22px;color:var(--text)}
 .logo span{color:var(--accent)}
 .nav-links{display:flex;gap:28px;color:var(--muted);font-size:14px;align-items:center}
-.nav-links a:hover{color:#fff}
+.nav-links a:hover{color:var(--accent)}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:12px 20px;border-radius:10px;font-weight:700;font-size:14px;
   border:1px solid var(--line);transition:.2s ease;
 }
-.btn-primary{background:var(--accent);color:#060913;border-color:transparent}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 20px rgba(6,182,212,0.4)}
-.btn-ghost{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.12)}
-.btn-ghost:hover{background:rgba(255,255,255,0.08);color:#fff}
+.btn-primary{background:var(--btn-primary-bg);color:var(--btn-primary-text);border-color:transparent}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 20px rgba(2,132,199,0.4)}
+.btn-ghost{background:var(--btn-ghost-bg);border-color:var(--line);color:var(--btn-ghost-text);box-shadow:0 2px 6px rgba(15,23,42,0.04)}
+.btn-ghost:hover{background:var(--panel2);color:var(--accent)}
+.btn-theme-toggle{
+  background:var(--panel);border:1px solid var(--line);color:var(--text);
+  width:36px;height:36px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:.2s ease;font-size:14px;box-shadow:0 2px 6px rgba(15,23,42,0.04);
+}
+.btn-theme-toggle:hover{border-color:var(--accent);color:var(--accent);transform:rotate(15deg)}
 .hero{padding:90px 0 60px;position:relative;overflow:hidden}
 .hero:before{
   content:"";position:absolute;width:620px;height:620px;border-radius:50%;
-  right:-260px;top:-260px;background:rgba(6,182,212,0.12);filter:blur(100px)
+  right:-260px;top:-260px;background:rgba(2,132,199,0.08);filter:blur(100px)
 }
 .eyebrow{
   color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase
@@ -60,7 +113,7 @@ nav{
 h1{
   font-family:'Outfit',sans-serif;
   font-size:clamp(42px,6vw,72px);line-height:1.05;letter-spacing:-.04em;
-  max-width:900px;margin:18px 0 24px
+  max-width:900px;margin:18px 0 24px;color:var(--text);
 }
 .hero p{max-width:680px;color:var(--muted);font-size:18px;margin-bottom:34px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
@@ -68,68 +121,69 @@ h1{
   margin-top:50px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px
 }
 .stat{
-  border:1px solid var(--line);background:rgba(255,255,255,0.03);
-  border-radius:16px;padding:22px;backdrop-filter:blur(12px)
+  border:1px solid var(--line);background:var(--stat-bg);
+  border-radius:16px;padding:22px;backdrop-filter:blur(12px);
+  box-shadow:var(--card-shadow);
 }
 .stat strong{font-size:22px;display:block;margin-bottom:4px;color:var(--accent)}.stat span{color:var(--muted);font-size:13px}
 section{padding:80px 0}
 .section-head{max-width:720px;margin-bottom:42px}
-.section-head h2{font-family:'Outfit',sans-serif;font-size:clamp(32px,4vw,48px);line-height:1.08;letter-spacing:-.03em;margin:12px 0}
+.section-head h2{font-family:'Outfit',sans-serif;font-size:clamp(32px,4vw,48px);line-height:1.08;letter-spacing:-.03em;margin:12px 0;color:var(--text)}
 .section-head p{color:var(--muted);font-size:16px}
 .problem-grid,.service-grid,.use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .card{
   background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;backdrop-filter:blur(16px);
-  transition:all 0.3s ease;
+  box-shadow:var(--card-shadow);transition:all 0.3s ease;
 }
-.card:hover{border-color:rgba(6,182,212,0.4);transform:translateY(-3px)}
-.card h3{margin:0 0 9px;font-size:19px;font-family:'Outfit',sans-serif}.card p{margin:0;color:var(--muted);font-size:14px}
+.card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.card h3{margin:0 0 9px;font-size:19px;font-family:'Outfit',sans-serif;color:var(--text)}.card p{margin:0;color:var(--muted);font-size:14px}
 .icon{
-  width:42px;height:42px;border-radius:10px;background:rgba(6,182,212,0.12);
+  width:42px;height:42px;border-radius:10px;background:rgba(2,132,199,0.12);
   display:grid;place-items:center;color:var(--accent);margin-bottom:18px;font-weight:900
 }
-.services{background:#0a0e1a}
+.services{background:var(--services-bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .service-grid{grid-template-columns:repeat(2,1fr)}
 .service-card{min-height:220px}
 .service-number{color:var(--accent);font-weight:800;font-size:12px;letter-spacing:.1em}
 .service-card ul{padding-left:18px;color:var(--muted);font-size:14px;margin-bottom:0;margin-top:12px}
 .arch{
-  background:linear-gradient(135deg,#0c1322,#070b14);
+  background:var(--arch-bg);
   border:1px solid var(--line);border-radius:22px;padding:28px;width:100%;
+  box-shadow:var(--card-shadow);
 }
 .flow{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px}
 .node{
-  flex:1 1 0%;padding:20px 10px;border:1px solid var(--line);background:rgba(255,255,255,0.04);
-  border-radius:12px;text-align:center;font-family:'Outfit',sans-serif;font-weight:600;box-sizing:border-box;
+  flex:1 1 0%;padding:20px 10px;border:1px solid var(--line);background:var(--node-bg);
+  border-radius:12px;text-align:center;font-family:'Outfit',sans-serif;font-weight:600;box-sizing:border-box;color:var(--text);
 }
 .node small{display:block;color:var(--muted);font-size:11px;margin-top:4px;font-weight:400}
 .arrow{color:var(--accent);font-size:22px;font-weight:bold}
 .stack{display:flex;flex-wrap:wrap;gap:10px}
 .tech{
-  padding:12px 18px;border:1px solid var(--line);border-radius:10px;background:var(--panel);
-  color:#e2e8f0;font-size:14px;font-weight:500;display:flex;align-items:center;gap:8px
+  padding:12px 18px;border:1px solid var(--line);border-radius:10px;background:var(--tech-bg);
+  color:var(--text);font-size:14px;font-weight:500;display:flex;align-items:center;gap:8px;
+  box-shadow:0 2px 6px rgba(15,23,42,0.03);
 }
 .outcomes{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.outcome{padding:22px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,0.02)}
-.outcome b{display:block;margin-bottom:5px;font-size:17px;color:#fff}.outcome span{color:var(--muted);font-size:14px}
+.outcome{padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:var(--card-shadow)}
+.outcome b{display:block;margin-bottom:5px;font-size:17px;color:var(--text)}.outcome span{color:var(--muted);font-size:14px}
 .cta{
   margin:20px auto 70px;padding:65px 30px;text-align:center;border-radius:24px;
-  border:1px solid rgba(6,182,212,0.3);background:
-  radial-gradient(circle at 20% 0%,rgba(6,182,212,0.15),transparent 40%),
-  radial-gradient(circle at 80% 100%,rgba(59,130,246,0.15),transparent 40%),var(--panel)
+  border:1px solid var(--line);background:var(--cta-bg);box-shadow:var(--card-shadow);
 }
-.cta h2{font-family:'Outfit',sans-serif;font-size:clamp(34px,5vw,52px);line-height:1.08;letter-spacing:-.03em;margin:10px auto 16px;max-width:750px}
+.cta h2{font-family:'Outfit',sans-serif;font-size:clamp(34px,5vw,52px);line-height:1.08;letter-spacing:-.03em;margin:10px auto 16px;max-width:750px;color:var(--text)}
 .cta p{color:var(--muted);max-width:600px;margin:0 auto 28px;font-size:17px}
 footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
 .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
 .arch-scroll-wrapper{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:rgba(255,255,255,0.05);border:1px solid var(--line);cursor:pointer;padding:8px 12px;border-radius:8px}
-.hamburger span{width:22px;height:2px;background-color:#fff;border-radius:2px}
-.mobile-menu{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(6,9,19,0.96);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);padding:24px 20px;display:none;z-index:2000;overflow-y:auto}
+.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:var(--panel);border:1px solid var(--line);cursor:pointer;padding:8px 12px;border-radius:8px}
+.hamburger span{width:22px;height:2px;background-color:var(--text);border-radius:2px}
+.mobile-menu{position:fixed;top:0;left:0;width:100vw;height:100vh;background:var(--mobile-menu-bg);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);padding:24px 20px;display:none;z-index:2000;overflow-y:auto}
 .mobile-menu.open{display:flex;flex-direction:column;justify-content:space-between}
 .mobile-menu-inner{display:flex;flex-direction:column;height:100%;max-width:480px;margin:0 auto;width:100%;justify-content:space-between}
 .mobile-menu-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:20px}
-.mobile-close-btn{background:rgba(255,255,255,0.08);border:1px solid var(--line);color:#fff;font-size:1.6rem;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
-.mobile-link{color:#fff;padding:12px 16px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.mobile-close-btn{background:var(--panel2);border:1px solid var(--line);color:var(--text);font-size:1.6rem;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.mobile-link{color:var(--text);padding:12px 16px;border-radius:10px;background:var(--panel2);border:1px solid var(--line);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:10px}
 @media(max-width:800px){
   .nav-links{display:none}.hero{padding-top:60px}
   .nav-cta-btn{display:none !important}
@@ -152,6 +206,9 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
       <a href="#contact">Contact</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
+      <button id="theme-toggle" class="btn-theme-toggle" title="Toggle Light / Dark Mode" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
       <a class="btn btn-primary nav-cta-btn" href="#contact"><i class="fas fa-comments"></i> Book Freelance Session</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
         <span></span><span></span><span></span>
@@ -165,7 +222,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
     <div>
       <div class="mobile-menu-header">
         <div style="display:flex;align-items:center;gap:10px;">
-          <strong style="font-size:1.1rem;color:#fff;">Saktheesh .services</strong>
+          <strong style="font-size:1.1rem;color:var(--text);">Saktheesh .services</strong>
         </div>
         <button class="mobile-close-btn" id="mobile-menu-close" aria-label="Close Menu">&times;</button>
       </div>
@@ -176,6 +233,9 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
       <a href="#contact" class="mobile-link"><i class="fas fa-paper-plane"></i> Contact</a>
     </div>
     <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+      <button id="mobile-theme-toggle" class="btn btn-ghost" style="width:100%;text-align:center;">
+        <i class="fas fa-moon"></i> <span>Switch Theme</span>
+      </button>
       <a href="#contact" class="btn btn-primary" style="width:100%;text-align:center;">Book Freelance Session</a>
       <a href="https://topmate.io/saktheesh/" target="_blank" class="btn btn-ghost" style="width:100%;text-align:center;">Book 1-on-1 on Topmate</a>
     </div>

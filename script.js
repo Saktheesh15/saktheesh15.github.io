@@ -145,28 +145,46 @@ function initMobileMenu() {
 }
 
 /* --------------------------------------------------------------------------
-   4. THEME TOGGLE (DARK / LIGHT)
+   4. THEME TOGGLE (DARK / LIGHT) - DEFAULT: LIGHT (WHITE BACKGROUND)
    -------------------------------------------------------------------------- */
 function initThemeToggle() {
-    const themeBtn = document.getElementById("theme-toggle");
-    if (!themeBtn) return;
+    const desktopThemeBtn = document.getElementById("theme-toggle");
+    const mobileThemeBtn = document.getElementById("mobile-theme-toggle");
 
-    const currentTheme = localStorage.getItem("theme") || "dark";
+    // Default to clean executive light theme (white background) unless user previously toggled to dark
+    const savedTheme = localStorage.getItem("theme");
+    const currentTheme = savedTheme ? savedTheme : "light";
     document.documentElement.setAttribute("data-theme", currentTheme);
-    updateThemeIcon(currentTheme);
+    updateThemeUI(currentTheme);
 
-    themeBtn.addEventListener("click", () => {
-        const activeTheme = document.documentElement.getAttribute("data-theme");
+    function toggleTheme() {
+        const activeTheme = document.documentElement.getAttribute("data-theme") || "light";
         const newTheme = activeTheme === "dark" ? "light" : "dark";
         document.documentElement.setAttribute("data-theme", newTheme);
         localStorage.setItem("theme", newTheme);
-        updateThemeIcon(newTheme);
-    });
+        updateThemeUI(newTheme);
+    }
 
-    function updateThemeIcon(theme) {
-        themeBtn.innerHTML = theme === "dark" 
-            ? '<i class="fas fa-sun"></i>' 
-            : '<i class="fas fa-moon"></i>';
+    if (desktopThemeBtn) {
+        desktopThemeBtn.addEventListener("click", toggleTheme);
+    }
+
+    if (mobileThemeBtn) {
+        mobileThemeBtn.addEventListener("click", toggleTheme);
+    }
+
+    function updateThemeUI(theme) {
+        if (desktopThemeBtn) {
+            desktopThemeBtn.innerHTML = theme === "dark" 
+                ? '<i class="fas fa-sun"></i>' 
+                : '<i class="fas fa-moon"></i>';
+            desktopThemeBtn.setAttribute("title", theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode");
+        }
+        if (mobileThemeBtn) {
+            mobileThemeBtn.innerHTML = theme === "dark"
+                ? '<i class="fas fa-sun"></i> <span>Switch to Light Theme</span>'
+                : '<i class="fas fa-moon"></i> <span>Switch to Dark Theme</span>';
+        }
     }
 }
 
